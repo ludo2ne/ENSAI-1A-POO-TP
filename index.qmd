@@ -1,0 +1,13 @@
+---
+title: "TP POO et documentation"
+description: "Introduction à la Programmation Orientée Objet et Documentation du code avec Python"
+author: "Ludovic Deneuville"
+format: html
+from: markdown+emoji
+---
+
+
+## TP
+
+* [TP1](doc/tp/tp1.qmd) : Programmation Python et Visual Studio Code
+* [TP2](doc/tp/tp2.qmd) : Modules, style de code, exceptions et tests

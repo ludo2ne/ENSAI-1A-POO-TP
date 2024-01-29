@@ -1,0 +1,21 @@
+h1,h2,h3,h4 {
+    color:#447099;
+  }
+
+h2::before {
+    content: '\1F4CD'; /*Unicode Punaise*/
+    margin-right: 8px;
+  }
+
+h3::before {
+    content: '\1F538'; /*Losange orange*/
+    margin-right: 8px;
+  }
+
+h4::before {
+    content: '\1F7B4';  /*Asterisque*/
+    margin-right: 8px;
+  }
+
+
+  

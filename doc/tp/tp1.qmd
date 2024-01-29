@@ -1,0 +1,90 @@
+---
+title: "POO et Documentation - TP1"
+description: "Programmation Python et Visual Studio Code"
+author: "Ludovic Deneuville"
+format: 
+  html:
+    toc: true
+    toc-location: left
+    toc-expand: 3
+from: markdown+emoji
+number-sections: true
+number-depth: 3
+---
+
+## Introduction
+
+* [ ] Créer l'arboresence
+  * à la main
+  * ou en ligne de commande
+    * aller dans le dossier où vous souhaitez créer l'arborescence
+    * clic droit > Git Bash
+    * `mkdir -p IPOO/TP1/Exercice_{1..7}/ && touch IPOO/TP1/Exercice_{1..7}/ex.py`
+    * la commande est dans *U:\Eleves\Informatique\1A POO*
+* [ ] Ouvrir Visual Studio Code
+* [ ] File > Open Folder > `Exercice_x`
+* [ ] Fonctions
+  * pourquoi -> éviter de faire 2 fois la même chose
+  * des entrées, des opérations, des sorties
+* [ ] Documentation
+* [ ] Tests
+* [ ] `if __name__ == "__main__":`
+* [ ] Terminal
+
+## exercice 1
+
+* Rappeler list, tuple, dict, set
+* enumerate : index, value
+* `sorted(liste)` vs `liste.sort()`
+
+## exercice 2
+
+```{.python}
+"*{:{^}{taille_max}}*".format(ligne, "^", taille_max)
+```
+
+## exercice 4
+
+```{.python}
+from itertools import combinations
+
+print(list(combinations([1, 2, 3, 4], 2)))
+```
+
+
+## Aides
+
+### Index error
+
+
+```{.python}
+try:
+    if liste1[i] > 0:
+    ...
+except IndexError:
+    print(f"Index error : {i}")
+```
+
+### Parcours de listes 
+
+```{.python}
+liste = ["Alban", "Bertille", "Corine"]
+
+for v in liste:
+    print(v)
+
+for i in range(len(liste)):
+    print(liste[i])
+
+for i, v in enumerate(liste):
+    print(f"index {i} : valeur {v}")
+```
+
+### Parcours de dictionnaires
+
+```{.python}
+dico = {"a":"Alban", "b":"Bertille", "c":"Corine"}
+
+ for k, v in dico.items():
+        print(f"clé {k} : valeur {v}")
+```
