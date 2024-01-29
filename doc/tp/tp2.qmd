@@ -1,5 +1,5 @@
 ---
-title: "POO et Documentation - TP1"
+title: "POO et Documentation - TP2"
 description: "Modules, style de code, exceptions et tests"
 author: "Ludovic Deneuville"
 format:
