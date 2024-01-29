@@ -2,7 +2,7 @@
 title: "POO et Documentation - TP1"
 description: "Modules, style de code, exceptions et tests"
 author: "Ludovic Deneuville"
-format: 
+format:
   html:
     toc: true
     toc-location: left
@@ -33,38 +33,93 @@ number-depth: 3
             │   ├── ...
 ```
 
-Pour prendre la bonne habitude de bien ranger vos fichiers, vous allez créer l'arborscence ci-dessus.  
+Pour prendre la bonne habitude de bien ranger vos fichiers, vous allez créer l'arborscence ci-dessus.
 Vous pouvez créer chaque dossier et fichier à la main, ou utiliser les commandes ci-dessous (mkdir : make directory):
 
-* [ ] Ouvrez `Git Bash`
-  * Sur le bureau > clic droit > **Git Bash here**
-* [ ] Collez les 2 commandes suivantes (clic droit > Paste ou MAJ+INSER)
-  * `mkdir -p /p/Cours1A/IPOO/TP1/Exercice_{1..7}/ && touch /p/Cours1A/IPOO/TP1/Exercice_{1..7}/ex.py`
-  * `mkdir -p /p/Cours1A/IPOO/TP2/Exercice_{1..5}/ && touch /p/Cours1A/IPOO/TP2/Exercice_{1..5}/ex.py`
+- [ ] Ouvrez `Git Bash`
+  - Sur le bureau > clic droit > **Git Bash here**
+- [ ] Collez la commande suivante
+  - `mkdir -p /p/Cours1A/IPOO/TP2/Exercice_{1..5}/ && touch /p/Cours1A/IPOO/TP2/Exercice_{1..5}/ex.py`
+  - dans Git Bash : clic droit > Paste ou MAJ + INSER
 
 :::{.callout-warning}
-:warning: Il est important de stocker vos fichiers dans votre lecteur `P:` et pas sur votre bureau ou votre disque *C:* car vos fichiers risquerait de disparaitre !
+### Utilisez le lecteur **P:**
+
+:warning: Il est important de stocker vos fichiers dans votre lecteur `P:` et pas sur votre bureau ou votre disque *C:- car vos fichiers risquerait de disparaitre !
 :::
 
 ## Visual Studio
 
-* [ ] Ouvrez Visual Studio
-  * [ ] File > Open Folder
-  * [ ] Cliquez une seule fois sur **Exercice_1**
-  * [ ] Cliquez sur `Sélectionner un dossier`
-    * dans votre *Explorer* à gauche apparait l'arborescence des dossiers et fichiers de **Exercice_1**
+- [ ] Ouvrez Visual Studio
+  - [ ] File > Open Folder
+  - [ ] Cliquez une seule fois sur **Exercice_1**
+  - [ ] Cliquez sur `Sélectionner un dossier`
+    - dans votre *Explorer- à gauche apparait l'arborescence des dossiers et fichiers de **Exercice_1**
 
 ## Exercices
 
-* `Flake8` est un [linter](https://openclassrooms.com/fr/courses/7160741-ecrivez-du-code-python-maintenable/7187871-utilisez-des-linters-pour-que-votre-code-reste-propre){.external target="_blank"}. Il vérifie la mise en forme de votre code et <span style="text-decoration: underline; text-decoration-style: wavy; text-decoration-color: red;">souligne en rouge ce qui ne lui plait pas</span>
-
-
 ### Exercice 1
 
-* [ ] téléchargez le fichier `fonctions.py` sur Moodle
-* [ ] Collez ce fichier dans `/p/Cours1A/IPOO/TP2/Exercice_1`
-* [ ] Allez dans VSCode et ouvrez ce fichier
-* [ ] Ouvrez un nouveau *Terminal* (Terminal > New Terminal)
+`Flake8` est un [linter](https://openclassrooms.com/fr/courses/7160741-ecrivez-du-code-python-maintenable/7187871-utilisez-des-linters-pour-que-votre-code-reste-propre){.external target="_blank"}. Il vérifie la mise en forme de votre code et <span style="text-decoration: underline; text-decoration-style: wavy; text-decoration-color: red;">souligne en rouge ce qui ne lui plait pas</span>
+
+- [ ] téléchargez le fichier `fonctions.py` sur Moodle
+- [ ] Collez ce fichier dans `/p/Cours1A/IPOO/TP2/Exercice_1`
+- [ ] Allez dans VSCode et ouvrez ce fichier
+- [ ] Ouvrez un nouveau *Terminal* (Terminal > New Terminal)
+- [ ] Suivez les consignes du sujet
+
+### Exercice 2
+
+- [ ] VSCode > File > Open Folder
+- [ ] Cliquez une seule fois sur **Exercice_2**
+- [ ] Cliquez sur `Sélectionner un dossier`
+
+Les doctest vu au TP1 ne sont pas utilisés en pratique car cela surcharge les modules.
+On préfère exporter les tests dans des modules à part.
+Si l'on veut tester le module *produit.py* :
+
+- on crée dans le même package, un module *test_produit.py*
+- dans *test_produit.py*, on importe `produit`et `pytest` :
+  ```{.python}
+  import pytest
+  from produit import produit
+  ```
+
+
+### Exercice 3
+
+- [ ] VSCode > File > Open Folder
+- [ ] Cliquez une seule fois sur **Exercice_3**
+- [ ] Cliquez sur `Sélectionner un dossier`
+
+:::{.callout-tip collapse="true"}
+### Aide
+
+- [ ] Vérifier que les 2 paramètres sont des tuples
+- [ ] Vérifier que les 2 paramètres sont des tuples de longeur 3
+- [ ] Vérifier que tous les éléments de ces tuples sont des int ou float
+- [ ] Vérifier que les éléments de *axes- sont strictements positifs
+- [ ] Tester si le point appartient à l'ellipsoïde
+- [ ] Ecrire des tests dans un autre fichier en s'inspirant de l'exercice 2
+:::
+
+
+### Exercice 4
+
+- Inscription
+  - [ ] Vérifier la validité d'une *adresse électronique*
+    - Exemple pour lever une exception
+      ```{.python}
+      if adresse_electronique.count('@') != 1:
+          raise ValueError(
+              "L'adresse électronique doit contenir un seul symbole @."
+          )
+      ```
+  - [ ] Valider que le mot de passe respecte les règles
+  - [ ] Vérifier que le 2e mot de passe saisi est le même
+- [ ] Connexion
+  - `base_de_donnees : list[tuple[str, str]]`
+- [ ] Ecrire les tests
 
 
 ## Template doc
@@ -91,10 +146,12 @@ def ma_fonction(param1, param2):
 
     Examples
     --------
-    >>> incluse('psa', 'abcdpsxyz+-012')
-    True
-    >>> incluse('', 'abcdpsxyz+-012')
-    True
+    >>> 1+1
+    2
+    >>> print("abc")
+    abc
+    >>> ma_fonction(xxx, yyy)
+    valeur_esperee
     """
     return None
 
