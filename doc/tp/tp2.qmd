@@ -34,7 +34,7 @@ number-depth: 3
 ```
 
 Pour prendre la bonne habitude de bien ranger vos fichiers, vous allez créer l'arborscence ci-dessus.
-Vous pouvez créer chaque dossier et fichier à la main, ou utiliser les commandes ci-dessous (mkdir : make directory):
+Vous pouvez créer chaque dossier et fichier à la main, ou utiliser les commandes ci-dessous (*mkdir : make directory*):
 
 - [ ] Ouvrez `Git Bash`
   - Sur le bureau > clic droit > **Git Bash here**
@@ -45,7 +45,7 @@ Vous pouvez créer chaque dossier et fichier à la main, ou utiliser les command
 :::{.callout-warning}
 ### Utilisez le lecteur **P:**
 
-:warning: Il est important de stocker vos fichiers dans votre lecteur `P:` et pas sur votre bureau ou votre disque *C:- car vos fichiers risquerait de disparaitre !
+Il est important de stocker vos fichiers dans votre lecteur `P:` et pas sur votre bureau ou votre disque *C:* car vos fichiers risquerait de disparaitre !
 :::
 
 ## Visual Studio
@@ -54,15 +54,15 @@ Vous pouvez créer chaque dossier et fichier à la main, ou utiliser les command
   - [ ] File > Open Folder
   - [ ] Cliquez une seule fois sur **Exercice_1**
   - [ ] Cliquez sur `Sélectionner un dossier`
-    - dans votre *Explorer- à gauche apparait l'arborescence des dossiers et fichiers de **Exercice_1**
+    - dans votre *Explorer* à gauche apparait l'arborescence des dossiers et fichiers de **Exercice_1**
 
 ## Exercices
 
 ### Exercice 1
 
-`Flake8` est un [linter](https://openclassrooms.com/fr/courses/7160741-ecrivez-du-code-python-maintenable/7187871-utilisez-des-linters-pour-que-votre-code-reste-propre){.external target="_blank"}. Il vérifie la mise en forme de votre code et <span style="text-decoration: underline; text-decoration-style: wavy; text-decoration-color: red;">souligne en rouge ce qui ne lui plait pas</span>
+`Flake8` est un [linter](https://openclassrooms.com/fr/courses/7160741-ecrivez-du-code-python-maintenable/7187871-utilisez-des-linters-pour-que-votre-code-reste-propre){.external target="_blank"}. Il vérifie la mise en forme de votre code et <span style="text-decoration: underline; text-decoration-style: wavy; text-decoration-color: red;">souligne en rouge ce qui ne lui plait pas.</span>
 
-- [ ] téléchargez le fichier `fonctions.py` sur Moodle
+- [ ] Téléchargez le fichier `fonctions.py` sur Moodle
 - [ ] Collez ce fichier dans `/p/Cours1A/IPOO/TP2/Exercice_1`
 - [ ] Allez dans VSCode et ouvrez ce fichier
 - [ ] Ouvrez un nouveau *Terminal* (Terminal > New Terminal)
