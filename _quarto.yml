@@ -21,14 +21,14 @@ website:
     right:
       - icon: github
         href: https://github.com/ludo2ne/ENSAI-1A-POO-TP
-        target: "_blank"        
+        target: "_blank"
   page-footer:
     right: |
-      Website built with [Quarto](https://quarto.org/){.external target="_blank"}  
+      Website built with [Quarto](https://quarto.org/){.external target="_blank"}
       [Code source](https://github.com/ludo2ne/ENSAI-1A-POO-TP){.external target="_blank"}
   repo-url: https://github.com/ludo2ne/ENSAI-1A-POO-TP
   repo-branch: main
-  reader-mode: true      
+  reader-mode: true
 
 format:
   html:

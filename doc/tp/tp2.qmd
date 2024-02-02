@@ -41,16 +41,23 @@ Vous pouvez créer chaque dossier et fichier à la main, ou utiliser les command
 - [ ] Collez la commande suivante
   - `mkdir -p /p/Cours1A/IPOO/TP2/Exercice_{1..5}/ && touch /p/Cours1A/IPOO/TP2/Exercice_{1..5}/ex.py`
   - dans Git Bash : clic droit > Paste ou MAJ + INSER
+- [ ] Fermez *Git Bash*
 
 :::{.callout-warning}
 ### Utilisez le lecteur **P:**
 
-Il est important de stocker vos fichiers dans votre lecteur `P:` et pas sur votre bureau ou votre disque *C:* car vos fichiers risquerait de disparaitre !
+Il est important de stocker vos fichiers dans votre lecteur `P:` et pas sur votre bureau ou votre disque *C:* car vos fichiers risqueraient de disparaitre !
 :::
 
-## Visual Studio
+## Moodle
 
-- [ ] Ouvrez Visual Studio
+- [ ] Aller sur la page du [tp2](https://foad-moodle.ensai.fr/course/view.php?id=148&section=3){.external target="_blank"}
+- [ ] Ouvrez le sujet et enregistrez le dans `/p/Cours1A/IPOO/TP2`
+- [ ] Téléchargez les fichiers *.py* et placez les dans le bon dossier
+
+## Visual Studio Code
+
+- [ ] Ouvrez Visual Studio Code
   - [ ] File > Open Folder
   - [ ] Cliquez une seule fois sur **Exercice_1**
   - [ ] Cliquez sur `Sélectionner un dossier`
