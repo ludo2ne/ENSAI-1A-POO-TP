@@ -18,6 +18,8 @@ website:
             text: "TP n°1"
           - href: doc/tp/tp2.qmd
             text: "TP n°2"
+          - href: doc/tp/tp3.qmd
+            text: "TP n°3"
     right:
       - icon: github
         href: https://github.com/ludo2ne/ENSAI-1A-POO-TP

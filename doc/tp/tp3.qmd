@@ -1,0 +1,168 @@
+---
+title: "POO et Documentation - TP3"
+description: "Structures hétérogènes de données et tests"
+author: "Ludovic Deneuville"
+format:
+  html:
+    toc: true
+    toc-location: left
+    toc-expand: 3
+from: markdown+emoji
+number-sections: true
+number-depth: 3
+---
+
+## Créer l'arborscence
+
+```
+└── P
+    └── Cours1A
+        └── IPOO
+            ├── TP1
+            │   ├── Exercice_1
+            │   │   └── ex.py
+            │   ├── Exercice_2
+            │   │   └── ex.py
+            │   ├── ...
+            │   └── Exercice_7
+            │       └── ex.py
+            ├── TP2
+            │   ├── Exercice_1
+            │   │   └── ex.py
+            │   ├── Exercice_2
+            │   ├── ...
+```
+
+Pour prendre la bonne habitude de bien ranger vos fichiers, vous allez créer l'arborscence ci-dessus.
+Vous pouvez créer chaque dossier et fichier à la main, ou utiliser les commandes ci-dessous (*mkdir : make directory*):
+
+- [ ] Ouvrez `Git Bash`
+  - Sur le bureau > clic droit > **Git Bash here**
+- [ ] Collez la commande suivante
+  - `mkdir -p /p/Cours1A/IPOO/TP3/Exercice_{1..4}/ && touch /p/Cours1A/IPOO/TP3/Exercice_{1..4}/ex.py`
+  - dans Git Bash : clic droit > Paste ou MAJ + INSER
+- [ ] Fermez *Git Bash*
+
+:::{.callout-warning}
+### Utilisez le lecteur **P:**
+
+Il est important de stocker vos fichiers dans votre lecteur `P:` et pas sur votre bureau ou votre disque *C:* car vos fichiers risqueraient de disparaitre !
+:::
+
+## Moodle
+
+- [ ] Aller sur la page du [TP3](https://foad-moodle.ensai.fr/pluginfile.php/27913/mod_resource/content/3/TP3%20-%20Sujet.pdf){.external target="_blank"}
+- [ ] Ouvrez le sujet et enregistrez le dans `/p/Cours1A/IPOO/TP3`
+
+
+## Visual Studio Code
+
+- [ ] Ouvrez Visual Studio Code
+  - [ ] File > Open Folder
+  - [ ] Cliquez [une seule fois]{.underline} sur **Exercice_1**
+  - [ ] Cliquez sur `Sélectionner un dossier`
+    - dans votre *Explorer* à gauche apparait l'arborescence des dossiers et fichiers de **Exercice_1**
+
+## Exercices
+
+### Exercice 1
+
+- pour lancer les tests (en collant dans un terminal)
+  - `python -m pytest --doctest-modules` 
+- :warning: dans une liste python, le premier élément est à l'index 0
+  - le dernier élément est à l'index `len(liste) - 1`
+
+#### Parcourir des listes
+
+```{.python}
+liste = ["a", "b", "c", "d", "e"]
+
+# Par index
+for i in range(len(liste)):
+    print(f"index : {i}, valeur : {liste[i]}")
+
+# Par valeurs
+for v in liste:
+    print(v)
+
+# Combiner index et valeurs
+for i, v in enumerate(liste):
+    print(f"index : {i}, valeur : {v}")
+```
+
+
+:::{.callout-tip collapse="true"}
+#### Aide
+
+- pour écrire les tests, voir TP2 > ex2
+- importer un module :arrow_right: CM voir diapo 14
+
+:::
+
+### Exercice 2
+
+- [ ] VSCode > File > Open Folder
+- [ ] Cliquez [une seule fois]{.underline} sur **Exercice_2**
+- [ ] Cliquez sur `Sélectionner un dossier`
+
+:::{.callout-note}
+La fonction *map(fonction, liste)* permet d'appliquer une fonction à une liste (mais vous n'avez pas le droit de l'utiliser)
+:::
+
+
+## Template doc
+
+Voici un modèle que vous pouvez utiliser pour documenter vos fonctions
+
+```{.python}
+def ma_fonction(param1, param2):
+    """description_courte
+
+    description_longue
+
+    Parameters
+    ----------
+    param1 : type (str, int, float, list...)
+        description_param1
+    param2 : type
+        description_param2
+
+    Returns
+    -------
+    type_retour
+        description_retour
+
+    Examples
+    --------
+    >>> 1+1
+    2
+    >>> print("abc")
+    abc
+    >>> ma_fonction(xxx, yyy)
+    valeur_esperee
+    """
+    return None
+
+
+if __name__ == '__main__':
+    a = ma_fonction(p1, p2)
+    print(a)
+```
+
+## Template pytest
+
+```{.python}
+import pytest
+from mon_fichier import ma_fonction
+
+@pytest.mark.parametrize(
+    'param1, param2, resultat_attendu',
+    [
+        (1,       1,                2),
+        (1,       2,                3),
+        (2,       2,                4)
+    ]
+)
+def test_ma_fonction(param1, param2, resultat_attendu):
+    assert ma_fonction(param1, param2) == resultat_attendu
+```

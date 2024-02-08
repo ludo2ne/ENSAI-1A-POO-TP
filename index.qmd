@@ -11,3 +11,4 @@ from: markdown+emoji
 
 * [TP1](doc/tp/tp1.qmd) : Programmation Python et Visual Studio Code
 * [TP2](doc/tp/tp2.qmd) : Modules, style de code, exceptions et tests
+* [TP3](doc/tp/tp3.qmd) : Structures hétérogènes de données et tests
