@@ -1,5 +1,5 @@
 ---
-title: "POO et Documentation - TP1"
+title: "POO, documentation et tests - TP1"
 description: "Programmation Python et Visual Studio Code"
 author: "Ludovic Deneuville"
 format: 

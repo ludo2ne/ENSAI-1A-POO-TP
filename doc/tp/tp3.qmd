@@ -1,5 +1,5 @@
 ---
-title: "POO et Documentation - TP3"
+title: "POO, documentation et tests - TP3"
 description: "Structures hétérogènes de données et tests"
 author: "Ludovic Deneuville"
 format:
@@ -39,7 +39,7 @@ Vous pouvez créer chaque dossier et fichier à la main, ou utiliser les command
 - [ ] Ouvrez `Git Bash`
   - Sur le bureau > clic droit > **Git Bash here**
 - [ ] Collez la commande suivante
-  - `mkdir -p /p/Cours1A/IPOO/TP3/Exercice_{1..4}/ && touch /p/Cours1A/IPOO/TP3/Exercice_{1..4}/ex.py`
+  - `mkdir -p /p/Cours1A/IPOO/TP3/Exercice_{1..4}/`
   - dans Git Bash : clic droit > Paste ou MAJ + INSER
 - [ ] Fermez *Git Bash*
 
@@ -96,6 +96,7 @@ for i, v in enumerate(liste):
 
 - pour écrire les tests, voir TP2 > ex2
 - importer un module :arrow_right: CM voir diapo 14
+- commencer à l'index 3 : `liste[3:]`
 
 :::
 
