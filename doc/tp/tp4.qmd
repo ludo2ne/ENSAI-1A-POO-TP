@@ -1,0 +1,421 @@
+---
+title: "POO, documentation et tests - TP4"
+description: "Classes, objets, attributs et méthodes en Python"
+author: "Ludovic Deneuville"
+format:
+  html:
+    toc: true
+    toc-location: left
+    toc-expand: 3
+from: markdown+emoji
+number-sections: true
+number-depth: 3
+---
+
+## Créer l'arborscence
+
+```
+└── P
+    └── Cours1A
+        └── IPOO
+            ├── TP1
+            │   ├── Exercice_1
+            │   │   └── ex.py
+            │   ├── Exercice_2
+            │   │   └── ex.py
+            │   ├── ...
+            │   └── Exercice_7
+            │       └── ex.py
+            ├── TP2
+            │   ├── Exercice_1
+            │   │   └── ex.py
+            │   ├── Exercice_2
+            │   ├── ...
+```
+
+Pour prendre la bonne habitude de bien ranger vos fichiers, vous allez créer l'arborscence ci-dessus.
+Vous pouvez créer chaque dossier et fichier à la main, ou utiliser les commandes ci-dessous (*mkdir : make directory*):
+
+- [ ] Ouvrez `Git Bash`
+  - Sur le bureau > clic droit > **Git Bash here**
+- [ ] Collez la commande suivante
+  - `mkdir -p /p/Cours1A/IPOO/TP4/Exercice_{1..3}/`
+  - dans Git Bash : clic droit > Paste ou MAJ + INSER
+- [ ] Fermez *Git Bash*
+
+:::{.callout-important}
+### Utilisez le lecteur **P:**
+
+Il est important de stocker vos fichiers dans votre lecteur `P:` et pas sur votre bureau ou votre disque *C:* car vos fichiers risqueraient de disparaitre !
+:::
+
+## Moodle
+
+- [ ] Aller sur la page du [TP4](https://foad-moodle.ensai.fr/pluginfile.php/27916/mod_resource/content/3/TP4%20-%20Sujet.pdf){.external target="_blank"}
+- [ ] Ouvrez le sujet et enregistrez le dans `/p/Cours1A/IPOO/TP4`
+
+
+## Visual Studio Code
+
+- [ ] Ouvrez Visual Studio Code
+  - [ ] File > Open Folder
+  - [ ] Cliquez [une seule fois]{.underline} sur **Exercice_1**
+  - [ ] Cliquez sur `Sélectionner un dossier`
+    - dans votre *Explorer* à gauche apparait l'arborescence des dossiers et fichiers de **Exercice_1**
+
+
+## Classes et Objets
+
+- une `classe` est comme un *"moule"* qui sert à fabriquer des objets
+- un `objet` est une *instance* de classe
+- une classe est composée
+  - d'attributs : ce qu'elle est
+  - de méthodes : ce qu'elle peut faire
+
+:::{.callout-important}
+- un nom de classe s'écrit en *CamelCase* (majuscule à chaque mot)
+- une seule classe par fichier
+  - une classe = un module
+  - le nom du module s'écrit en *snake_case* (mots en minuscules séparés par des _)
+:::
+
+
+### Exemple
+
+```{.python filename="frac.py"}
+class Frac:
+    def __init__(self, num: int, denom: int) -> None:
+    """Constructeur"""
+        self.num = num 
+        self.denom = denom
+
+    def add(self, autre_fraction) -> Frac:
+    """Additionne deux fractions"""
+        numerateur = self.num * autre_fraction.denom + autre_fraction.num * self.denom 
+        denominateur = self.denom * autre_fraction.denom 
+        return Frac(numerateur, denominateur)
+
+    def __str__(self) -> str:
+    """Retourne une chaîne affichant la fraction"""
+        return f"{self.num} / {self.denom}"
+```
+
+## Exercices
+
+### Exercice 1
+
+- [ ] VSCode > File > Open Folder
+- [ ] Cliquez [une seule fois]{.underline} sur **Exercice_1**
+- [ ] Cliquez sur `Sélectionner un dossier`
+
+---
+
+- [ ] Créez un fichier `voiture.py`
+  - [ ] Codez le constructeur
+  - [ ] Codez les méthodes
+  - [ ] Copiez les doctests ci-dessous
+  ```{.python}
+  >>> a1 = Voiture('titine', 'bleue') 
+  >>> a2 = Voiture('quatrelle','verte') 
+  >>> a3 = Voiture('bovelo','jaune')
+  >>> a2.accelere(18) 
+  >>> a3.accelere(8)
+  >>> print(a1)
+  Voiture titine de couleur bleue à l'arrêt.
+  >>> print(a2)
+  Voiture quatrelle de couleur verte roule à 10km/h.
+  >>> print(a3)
+  Voiture bovelo de couleur jaune roule à 8km/h.
+  ```
+
+:::{.callout-tip collapse="true"}
+#### Aide
+
+Pour lancer les tests, plusieurs possibilités :
+
+1. Coller ceci en bas de votre classe, puis cliquer sur l'icone *éxéctuer* :arrow_forward:
+  ```{.python}
+  if __name__ == '__main__':
+      import doctest    
+
+	  doctest.testmod(verbose=True)
+  ```
+2. dans un terminal : `python -m pytest --doctest-modules`
+3. utiliser l'interface de VSCode (à gauche icone Testing en forme de fiole triangulaire)
+
+:::
+
+
+:::{.callout-note collapse="true" title="En savoir plus sur les tests"}
+
+Une bonne pratique consiste à écrire les tests avant le code, c'est le TDD (Test Driven Development).  
+Voici des tests pour la classe Voiture.  
+Une fois votre code écrit, vous pourrez vérifier que tous les tests passent.
+
+- `python -m pytest`
+
+Pour vérifier si l'on a bien tout testé, il est possible de générer la couverture de tests
+
+- `coverage run -m pytest` pour lancer les tests
+- `coverage html` pour générer un rapport (fichier Exercice_1/htmlcov/index.html)
+- cliquer sur *voiture.py* pour voir les lignes non testées
+
+```{.python filename="test_voiture.py"}
+import pytest
+
+from voiture import Voiture
+
+
+@pytest.fixture
+def voiture_arretee():
+    return Voiture("titine", "bleue")
+
+
+@pytest.fixture
+def voiture_5():
+    return Voiture("titine", "bleue", 5)
+
+
+@pytest.fixture
+def voiture_125():
+    return Voiture("titine", "bleue", 125)
+
+
+def test_accelere_ok(voiture_arretee):
+    # GIVEN
+
+    # WHEN
+    voiture_arretee.accelere(5)
+
+    # THEN
+    assert voiture_arretee.vitesse == 5
+
+
+def test_accelere_max(voiture_arretee):
+    # GIVEN
+
+    # WHEN
+    voiture_arretee.accelere(15)
+
+    # THEN
+    assert voiture_arretee.vitesse == 10
+
+
+def test_accelere_130(voiture_125):
+    # GIVEN
+
+    # WHEN
+    voiture_125.accelere(10)
+
+    # THEN
+    assert voiture_125.vitesse == 130
+
+
+def test_accelere_negatif(voiture_125):
+    # GIVEN
+
+    # WHEN
+    voiture_125.accelere(-10)
+
+    # THEN
+    assert voiture_125.vitesse == 125
+
+
+def test_freine_negatif(voiture_5):
+    # GIVEN
+
+    # WHEN
+    voiture_5.freine(-10)
+
+    # THEN
+    assert voiture_5.vitesse == 5
+
+
+def test_freine_zero(voiture_5):
+    # GIVEN
+
+    # WHEN
+    voiture_5.freine(10)
+
+    # THEN
+    assert voiture_5.vitesse == 0
+
+
+def test_freine(voiture_125):
+    # GIVEN
+
+    # WHEN
+    voiture_125.freine(25)
+
+    # THEN
+    assert voiture_125.vitesse == 100
+
+
+def test_est_arretee_true(voiture_arretee):
+    # GIVEN
+
+    # WHEN
+    res = voiture_arretee.est_arretee()
+
+    # THEN
+    assert res
+
+
+def test_est_arretee_false(voiture_125):
+    # GIVEN
+
+    # WHEN
+    res = voiture_125.est_arretee()
+
+    # THEN
+    assert not res
+```
+:::
+
+### Exercice 2
+
+- [ ] VSCode > File > Open Folder
+- [ ] Cliquez [une seule fois]{.underline} sur **Exercice_2**
+- [ ] Cliquez sur `Sélectionner un dossier`
+
+:::{.callout-note}
+- [ ] Créez un fichier `complexe.py`
+  - [ ] Codez le constructeur
+  - [ ] Codez les méthodes
+:::
+
+
+### Exercice 3
+
+- [ ] VSCode > File > Open Folder
+- [ ] Cliquez [une seule fois]{.underline} sur **Exercice_3**
+- [ ] Cliquez sur `Sélectionner un dossier`
+
+---
+
+- [ ] Partie 1 : Créez un fichier `domino.py` qui contient la classe *Domino*
+- [ ] Partie 2 : Créez un fichier `jeu_domino.py` qui contient la classe *JeuDomino*
+
+## Template classe
+
+```{.python}
+class MaClasse:
+	'''titre_ma_classe
+
+	Description
+
+	Attributes
+	----------
+	attribut_1 : type_attribut_1 (str, int, float, list, bool, function...)
+		desc_attribut_1
+        
+	attribut_2 : type_attribut_2
+		desc_attribut_2
+	'''
+	
+	def __init__(self, parametre_1, parametre_2):
+		'''Constructeur de l'objet
+
+		Parameters
+		----------
+		parametre_1 : type_parametre_1
+			desc_parametre_1
+            
+		parametre_2 : type_parametre_2
+			desc_parametre_2
+		'''
+		self.attribut_1 = parametre_1
+		self.attribut_2 = parametre_2
+
+	def ma_methode(self, param1):
+		'''desc_courte_ma_methode
+
+		desc_longue_ma_methode_facultatif		
+
+		Parameters
+		----------
+		param1 : type
+			desc_param_1
+			
+		Returns
+		-------
+		type
+			desc_retour
+
+		Examples
+		--------
+		>>> mon_obj = ma_classe("toto")
+        >>> mon_obj.ma_methode("xxx")
+		2
+		'''
+		return 2
+
+	def __str__(self):
+		'''Conversion de l'objet en chaîne de caractères
+		
+		Examples
+		--------
+		>>> mon_obj = ma_classe("toto")
+		>>> print(mon_obj)
+		Classe d'attribut_1 égal à toto
+		'''
+		return f"Classe d'attribut_1 égal à {self.attribut_1}"
+```
+
+
+## Template fonction
+
+Voici un modèle que vous pouvez utiliser pour documenter vos fonctions
+
+```{.python}
+def ma_fonction(param1, param2):
+    """description_courte
+
+    description_longue
+
+    Parameters
+    ----------
+    param1 : type (str, int, float, list...)
+        description_param1
+    param2 : type
+        description_param2
+
+    Returns
+    -------
+    type_retour
+        description_retour
+
+    Examples
+    --------
+    >>> 1+1
+    2
+    >>> print("abc")
+    abc
+    >>> ma_fonction(xxx, yyy)
+    valeur_esperee
+    """
+    return None
+
+
+if __name__ == '__main__':
+    a = ma_fonction(p1, p2)
+    print(a)
+```
+
+## Template pytest
+
+```{.python}
+import pytest
+from mon_fichier import ma_fonction
+
+@pytest.mark.parametrize(
+    'param1, param2, resultat_attendu',
+    [
+        (1,       1,                2),
+        (1,       2,                3),
+        (2,       2,                4)
+    ]
+)
+def test_ma_fonction(param1, param2, resultat_attendu):
+    assert ma_fonction(param1, param2) == resultat_attendu
+```
