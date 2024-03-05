@@ -4,147 +4,14 @@
     "href": "index.html",
     "title": "TP POO et documentation",
     "section": "",
-    "text": "TP1 : Programmation Python et Visual Studio Code\nTP2 : Modules, style de code, exceptions et tests\nTP3 : Structures hétérogènes de données et tests\nTP4 : Classes, objets, attributs et méthodes en Python"
+    "text": "TP1 : Programmation Python et Visual Studio Code\nTP2 : Modules, style de code, exceptions et tests\nTP3 : Structures hétérogènes de données et tests\nTP4 : Classes, objets, attributs et méthodes en Python\nTP5 : Classes et diagrammes UML"
   },
   {
     "objectID": "index.html#tp",
     "href": "index.html#tp",
     "title": "TP POO et documentation",
     "section": "",
-    "text": "TP1 : Programmation Python et Visual Studio Code\nTP2 : Modules, style de code, exceptions et tests\nTP3 : Structures hétérogènes de données et tests\nTP4 : Classes, objets, attributs et méthodes en Python"
-  },
-  {
-    "objectID": "doc/tp/tp3.html",
-    "href": "doc/tp/tp3.html",
-    "title": "POO, documentation et tests - TP3",
-    "section": "",
-    "text": "└── P\n    └── Cours1A\n        └── IPOO\n            ├── TP1\n            │   ├── Exercice_1\n            │   │   └── ex.py\n            │   ├── Exercice_2\n            │   │   └── ex.py\n            │   ├── ...\n            │   └── Exercice_7\n            │       └── ex.py\n            ├── TP2\n            │   ├── Exercice_1\n            │   │   └── ex.py\n            │   ├── Exercice_2\n            │   ├── ...\nPour prendre la bonne habitude de bien ranger vos fichiers, vous allez créer l’arborscence ci-dessus. Vous pouvez créer chaque dossier et fichier à la main, ou utiliser les commandes ci-dessous (mkdir : make directory):\n\nOuvrez Git Bash\n\nSur le bureau &gt; clic droit &gt; Git Bash here\n\nCollez la commande suivante\n\nmkdir -p /p/Cours1A/IPOO/TP3/Exercice_{1..4}/\ndans Git Bash : clic droit &gt; Paste ou MAJ + INSER\n\nFermez Git Bash\n\n\n\n\n\n\n\nUtilisez le lecteur P:\n\n\n\nIl est important de stocker vos fichiers dans votre lecteur P: et pas sur votre bureau ou votre disque C: car vos fichiers risqueraient de disparaitre !"
-  },
-  {
-    "objectID": "doc/tp/tp3.html#créer-larborscence",
-    "href": "doc/tp/tp3.html#créer-larborscence",
-    "title": "POO, documentation et tests - TP3",
-    "section": "",
-    "text": "└── P\n    └── Cours1A\n        └── IPOO\n            ├── TP1\n            │   ├── Exercice_1\n            │   │   └── ex.py\n            │   ├── Exercice_2\n            │   │   └── ex.py\n            │   ├── ...\n            │   └── Exercice_7\n            │       └── ex.py\n            ├── TP2\n            │   ├── Exercice_1\n            │   │   └── ex.py\n            │   ├── Exercice_2\n            │   ├── ...\nPour prendre la bonne habitude de bien ranger vos fichiers, vous allez créer l’arborscence ci-dessus. Vous pouvez créer chaque dossier et fichier à la main, ou utiliser les commandes ci-dessous (mkdir : make directory):\n\nOuvrez Git Bash\n\nSur le bureau &gt; clic droit &gt; Git Bash here\n\nCollez la commande suivante\n\nmkdir -p /p/Cours1A/IPOO/TP3/Exercice_{1..4}/\ndans Git Bash : clic droit &gt; Paste ou MAJ + INSER\n\nFermez Git Bash\n\n\n\n\n\n\n\nUtilisez le lecteur P:\n\n\n\nIl est important de stocker vos fichiers dans votre lecteur P: et pas sur votre bureau ou votre disque C: car vos fichiers risqueraient de disparaitre !"
-  },
-  {
-    "objectID": "doc/tp/tp3.html#moodle",
-    "href": "doc/tp/tp3.html#moodle",
-    "title": "POO, documentation et tests - TP3",
-    "section": "2 Moodle",
-    "text": "2 Moodle\n\nAller sur la page du TP3\nOuvrez le sujet et enregistrez le dans /p/Cours1A/IPOO/TP3"
-  },
-  {
-    "objectID": "doc/tp/tp3.html#visual-studio-code",
-    "href": "doc/tp/tp3.html#visual-studio-code",
-    "title": "POO, documentation et tests - TP3",
-    "section": "3 Visual Studio Code",
-    "text": "3 Visual Studio Code\n\nOuvrez Visual Studio Code\n\nFile &gt; Open Folder\nCliquez une seule fois sur Exercice_1\nCliquez sur Sélectionner un dossier\n\ndans votre Explorer à gauche apparait l’arborescence des dossiers et fichiers de Exercice_1"
-  },
-  {
-    "objectID": "doc/tp/tp3.html#exercices",
-    "href": "doc/tp/tp3.html#exercices",
-    "title": "POO, documentation et tests - TP3",
-    "section": "4 Exercices",
-    "text": "4 Exercices\n\n4.1 Exercice 1\n\npour lancer les tests (en collant dans un terminal)\n\npython -m pytest --doctest-modules\n\n⚠️ dans une liste python, le premier élément est à l’index 0\n\nle dernier élément est à l’index len(liste) - 1\n\n\n\nParcourir des listes\nliste = [\"a\", \"b\", \"c\", \"d\", \"e\"]\n\n# Par index\nfor i in range(len(liste)):\n    print(f\"index : {i}, valeur : {liste[i]}\")\n\n# Par valeurs\nfor v in liste:\n    print(v)\n\n# Combiner index et valeurs\nfor i, v in enumerate(liste):\n    print(f\"index : {i}, valeur : {v}\")\n\n\n\n\n\n\nAide\n\n\n\n\n\n\npour écrire les tests, voir TP2 &gt; ex2\nimporter un module ➡️ CM voir diapo 14\ncommencer à l’index 3 : liste[3:]\n\n\n\n\n\n\n\n4.2 Exercice 2\n\nVSCode &gt; File &gt; Open Folder\nCliquez une seule fois sur Exercice_2\nCliquez sur Sélectionner un dossier\n\n\n\n\n\n\n\nNote\n\n\n\nLa fonction map(fonction, liste) permet d’appliquer une fonction à une liste (mais vous n’avez pas le droit de l’utiliser)"
-  },
-  {
-    "objectID": "doc/tp/tp3.html#template-doc",
-    "href": "doc/tp/tp3.html#template-doc",
-    "title": "POO, documentation et tests - TP3",
-    "section": "5 Template doc",
-    "text": "5 Template doc\nVoici un modèle que vous pouvez utiliser pour documenter vos fonctions\ndef ma_fonction(param1, param2):\n    \"\"\"description_courte\n\n    description_longue\n\n    Parameters\n    ----------\n    param1 : type (str, int, float, list...)\n        description_param1\n    param2 : type\n        description_param2\n\n    Returns\n    -------\n    type_retour\n        description_retour\n\n    Examples\n    --------\n    &gt;&gt;&gt; 1+1\n    2\n    &gt;&gt;&gt; print(\"abc\")\n    abc\n    &gt;&gt;&gt; ma_fonction(xxx, yyy)\n    valeur_esperee\n    \"\"\"\n    return None\n\n\nif __name__ == '__main__':\n    a = ma_fonction(p1, p2)\n    print(a)"
-  },
-  {
-    "objectID": "doc/tp/tp3.html#template-pytest",
-    "href": "doc/tp/tp3.html#template-pytest",
-    "title": "POO, documentation et tests - TP3",
-    "section": "6 Template pytest",
-    "text": "6 Template pytest\nimport pytest\nfrom mon_fichier import ma_fonction\n\n@pytest.mark.parametrize(\n    'param1, param2, resultat_attendu',\n    [\n        (1,       1,                2),\n        (1,       2,                3),\n        (2,       2,                4)\n    ]\n)\ndef test_ma_fonction(param1, param2, resultat_attendu):\n    assert ma_fonction(param1, param2) == resultat_attendu"
-  },
-  {
-    "objectID": "doc/tp/tp1.html",
-    "href": "doc/tp/tp1.html",
-    "title": "POO, documentation et tests - TP1",
-    "section": "",
-    "text": "Créer l’arboresence\n\nà la main\nou en ligne de commande\n\naller dans le dossier où vous souhaitez créer l’arborescence\nclic droit &gt; Git Bash\nmkdir -p IPOO/TP1/Exercice_{1..7}/ && touch IPOO/TP1/Exercice_{1..7}/ex.py\nla commande est dans U:\\1A POO\n\n\nOuvrir Visual Studio Code\nFile &gt; Open Folder &gt; Exercice_x\nFonctions\n\npourquoi -&gt; éviter de faire 2 fois la même chose\ndes entrées, des opérations, des sorties\n\nDocumentation\nTests\nif __name__ == \"__main__\":\nTerminal"
-  },
-  {
-    "objectID": "doc/tp/tp1.html#introduction",
-    "href": "doc/tp/tp1.html#introduction",
-    "title": "POO, documentation et tests - TP1",
-    "section": "",
-    "text": "Créer l’arboresence\n\nà la main\nou en ligne de commande\n\naller dans le dossier où vous souhaitez créer l’arborescence\nclic droit &gt; Git Bash\nmkdir -p IPOO/TP1/Exercice_{1..7}/ && touch IPOO/TP1/Exercice_{1..7}/ex.py\nla commande est dans U:\\1A POO\n\n\nOuvrir Visual Studio Code\nFile &gt; Open Folder &gt; Exercice_x\nFonctions\n\npourquoi -&gt; éviter de faire 2 fois la même chose\ndes entrées, des opérations, des sorties\n\nDocumentation\nTests\nif __name__ == \"__main__\":\nTerminal"
-  },
-  {
-    "objectID": "doc/tp/tp1.html#exercice-1",
-    "href": "doc/tp/tp1.html#exercice-1",
-    "title": "POO, documentation et tests - TP1",
-    "section": "2 exercice 1",
-    "text": "2 exercice 1\n\nRappeler list, tuple, dict, set\nenumerate : index, value\nsorted(liste) vs liste.sort()"
-  },
-  {
-    "objectID": "doc/tp/tp1.html#exercice-2",
-    "href": "doc/tp/tp1.html#exercice-2",
-    "title": "POO, documentation et tests - TP1",
-    "section": "3 exercice 2",
-    "text": "3 exercice 2\n\"*{:{^}{taille_max}}*\".format(ligne, \"^\", taille_max)"
-  },
-  {
-    "objectID": "doc/tp/tp1.html#exercice-4",
-    "href": "doc/tp/tp1.html#exercice-4",
-    "title": "POO, documentation et tests - TP1",
-    "section": "4 exercice 4",
-    "text": "4 exercice 4\nfrom itertools import combinations\n\nprint(list(combinations([1, 2, 3, 4], 2)))"
-  },
-  {
-    "objectID": "doc/tp/tp1.html#aides",
-    "href": "doc/tp/tp1.html#aides",
-    "title": "POO, documentation et tests - TP1",
-    "section": "5 Aides",
-    "text": "5 Aides\n\n5.1 Index error\ntry:\n    if liste1[i] &gt; 0:\n    ...\nexcept IndexError:\n    print(f\"Index error : {i}\")\n\n\n5.2 Parcours de listes\nliste = [\"Alban\", \"Bertille\", \"Corine\"]\n\nfor v in liste:\n    print(v)\n\nfor i in range(len(liste)):\n    print(liste[i])\n\nfor i, v in enumerate(liste):\n    print(f\"index {i} : valeur {v}\")\n\n\n5.3 Parcours de dictionnaires\ndico = {\"a\":\"Alban\", \"b\":\"Bertille\", \"c\":\"Corine\"}\n\n for k, v in dico.items():\n        print(f\"clé {k} : valeur {v}\")"
-  },
-  {
-    "objectID": "doc/tp/tp2.html",
-    "href": "doc/tp/tp2.html",
-    "title": "POO, documentation et tests - TP2",
-    "section": "",
-    "text": "└── P\n    └── Cours1A\n        └── IPOO\n            ├── TP1\n            │   ├── Exercice_1\n            │   │   └── ex.py\n            │   ├── Exercice_2\n            │   │   └── ex.py\n            │   ├── ...\n            │   └── Exercice_7\n            │       └── ex.py\n            ├── TP2\n            │   ├── Exercice_1\n            │   │   └── ex.py\n            │   ├── Exercice_2\n            │   ├── ...\nPour prendre la bonne habitude de bien ranger vos fichiers, vous allez créer l’arborscence ci-dessus. Vous pouvez créer chaque dossier et fichier à la main, ou utiliser les commandes ci-dessous (mkdir : make directory):\n\nOuvrez Git Bash\n\nSur le bureau &gt; clic droit &gt; Git Bash here\n\nCollez la commande suivante\n\nmkdir -p /p/Cours1A/IPOO/TP2/Exercice_{1..5}/ && touch /p/Cours1A/IPOO/TP2/Exercice_{1..5}/ex.py\ndans Git Bash : clic droit &gt; Paste ou MAJ + INSER\n\nFermez Git Bash\n\n\n\n\n\n\n\nUtilisez le lecteur P:\n\n\n\nIl est important de stocker vos fichiers dans votre lecteur P: et pas sur votre bureau ou votre disque C: car vos fichiers risqueraient de disparaitre !"
-  },
-  {
-    "objectID": "doc/tp/tp2.html#créer-larborscence",
-    "href": "doc/tp/tp2.html#créer-larborscence",
-    "title": "POO, documentation et tests - TP2",
-    "section": "",
-    "text": "└── P\n    └── Cours1A\n        └── IPOO\n            ├── TP1\n            │   ├── Exercice_1\n            │   │   └── ex.py\n            │   ├── Exercice_2\n            │   │   └── ex.py\n            │   ├── ...\n            │   └── Exercice_7\n            │       └── ex.py\n            ├── TP2\n            │   ├── Exercice_1\n            │   │   └── ex.py\n            │   ├── Exercice_2\n            │   ├── ...\nPour prendre la bonne habitude de bien ranger vos fichiers, vous allez créer l’arborscence ci-dessus. Vous pouvez créer chaque dossier et fichier à la main, ou utiliser les commandes ci-dessous (mkdir : make directory):\n\nOuvrez Git Bash\n\nSur le bureau &gt; clic droit &gt; Git Bash here\n\nCollez la commande suivante\n\nmkdir -p /p/Cours1A/IPOO/TP2/Exercice_{1..5}/ && touch /p/Cours1A/IPOO/TP2/Exercice_{1..5}/ex.py\ndans Git Bash : clic droit &gt; Paste ou MAJ + INSER\n\nFermez Git Bash\n\n\n\n\n\n\n\nUtilisez le lecteur P:\n\n\n\nIl est important de stocker vos fichiers dans votre lecteur P: et pas sur votre bureau ou votre disque C: car vos fichiers risqueraient de disparaitre !"
-  },
-  {
-    "objectID": "doc/tp/tp2.html#moodle",
-    "href": "doc/tp/tp2.html#moodle",
-    "title": "POO, documentation et tests - TP2",
-    "section": "2 Moodle",
-    "text": "2 Moodle\n\nAller sur la page du tp2\nOuvrez le sujet et enregistrez le dans /p/Cours1A/IPOO/TP2\nTéléchargez les fichiers .py et placez les dans le bon dossier"
-  },
-  {
-    "objectID": "doc/tp/tp2.html#visual-studio-code",
-    "href": "doc/tp/tp2.html#visual-studio-code",
-    "title": "POO, documentation et tests - TP2",
-    "section": "3 Visual Studio Code",
-    "text": "3 Visual Studio Code\n\nOuvrez Visual Studio Code\n\nFile &gt; Open Folder\nCliquez une seule fois sur Exercice_1\nCliquez sur Sélectionner un dossier\n\ndans votre Explorer à gauche apparait l’arborescence des dossiers et fichiers de Exercice_1"
-  },
-  {
-    "objectID": "doc/tp/tp2.html#exercices",
-    "href": "doc/tp/tp2.html#exercices",
-    "title": "POO, documentation et tests - TP2",
-    "section": "4 Exercices",
-    "text": "4 Exercices\n\n4.1 Exercice 1\nFlake8 est un linter. Il vérifie la mise en forme de votre code et souligne en rouge ce qui ne lui plait pas.\n\nTéléchargez le fichier fonctions.py sur Moodle\nCollez ce fichier dans /p/Cours1A/IPOO/TP2/Exercice_1\nAllez dans VSCode et ouvrez ce fichier\nOuvrez un nouveau Terminal (Terminal &gt; New Terminal)\nSuivez les consignes du sujet\n\n\n\n4.2 Exercice 2\n\nVSCode &gt; File &gt; Open Folder\nCliquez une seule fois sur Exercice_2\nCliquez sur Sélectionner un dossier\n\nLes doctest vu au TP1 ne sont pas utilisés en pratique car cela surcharge les modules. On préfère exporter les tests dans des modules à part. Si l’on veut tester le module produit.py :\n\non crée dans le même package, un module test_produit.py\ndans test_produit.py, on importe produitet pytest :\nimport pytest\nfrom produit import produit\n\n\n\n4.3 Exercice 3\n\nVSCode &gt; File &gt; Open Folder\nCliquez une seule fois sur Exercice_3\nCliquez sur Sélectionner un dossier\n\n\n\n\n\n\n\nAide\n\n\n\n\n\n\nVérifier que les 2 paramètres sont des tuples\nVérifier que les 2 paramètres sont des tuples de longeur 3\nVérifier que tous les éléments de ces tuples sont des int ou float\nVérifier que les éléments de *axes- sont strictements positifs\nTester si le point appartient à l’ellipsoïde\nEcrire des tests dans un autre fichier en s’inspirant de l’exercice 2\n\n\n\n\n\n\n4.4 Exercice 4\n\nInscription\n\nVérifier la validité d’une adresse électronique\n\nExemple pour lever une exception\nif adresse_electronique.count('@') != 1:\n    raise ValueError(\n        \"L'adresse électronique doit contenir un seul symbole @.\"\n    )\n\nValider que le mot de passe respecte les règles\nVérifier que le 2e mot de passe saisi est le même\n\nConnexion\n\nbase_de_donnees : list[tuple[str, str]]\n\nEcrire les tests"
-  },
-  {
-    "objectID": "doc/tp/tp2.html#template-doc",
-    "href": "doc/tp/tp2.html#template-doc",
-    "title": "POO, documentation et tests - TP2",
-    "section": "5 Template doc",
-    "text": "5 Template doc\nVoici un modèle que vous pouvez utiliser pour documenter vos fonctions\ndef ma_fonction(param1, param2):\n    \"\"\"description_courte\n\n    description_longue\n\n    Parameters\n    ----------\n    param1 : type (str, int, float, list...)\n        description_param1\n    param2 : type\n        description_param2\n\n    Returns\n    -------\n    type_retour\n        description_retour\n\n    Examples\n    --------\n    &gt;&gt;&gt; 1+1\n    2\n    &gt;&gt;&gt; print(\"abc\")\n    abc\n    &gt;&gt;&gt; ma_fonction(xxx, yyy)\n    valeur_esperee\n    \"\"\"\n    return None\n\n\nif __name__ == '__main__':\n    a = ma_fonction(p1, p2)\n    print(a)"
+    "text": "TP1 : Programmation Python et Visual Studio Code\nTP2 : Modules, style de code, exceptions et tests\nTP3 : Structures hétérogènes de données et tests\nTP4 : Classes, objets, attributs et méthodes en Python\nTP5 : Classes et diagrammes UML"
   },
   {
     "objectID": "doc/tp/tp4.html",
@@ -208,5 +75,194 @@
     "title": "POO, documentation et tests - TP4",
     "section": "8 Template pytest",
     "text": "8 Template pytest\nimport pytest\nfrom mon_fichier import ma_fonction\n\n@pytest.mark.parametrize(\n    'param1, param2, resultat_attendu',\n    [\n        (1,       1,                2),\n        (1,       2,                3),\n        (2,       2,                4)\n    ]\n)\ndef test_ma_fonction(param1, param2, resultat_attendu):\n    assert ma_fonction(param1, param2) == resultat_attendu"
+  },
+  {
+    "objectID": "doc/tp/tp2.html",
+    "href": "doc/tp/tp2.html",
+    "title": "POO, documentation et tests - TP2",
+    "section": "",
+    "text": "└── P\n    └── Cours1A\n        └── IPOO\n            ├── TP1\n            │   ├── Exercice_1\n            │   │   └── ex.py\n            │   ├── Exercice_2\n            │   │   └── ex.py\n            │   ├── ...\n            │   └── Exercice_7\n            │       └── ex.py\n            ├── TP2\n            │   ├── Exercice_1\n            │   │   └── ex.py\n            │   ├── Exercice_2\n            │   ├── ...\nPour prendre la bonne habitude de bien ranger vos fichiers, vous allez créer l’arborscence ci-dessus. Vous pouvez créer chaque dossier et fichier à la main, ou utiliser les commandes ci-dessous (mkdir : make directory):\n\nOuvrez Git Bash\n\nSur le bureau &gt; clic droit &gt; Git Bash here\n\nCollez la commande suivante\n\nmkdir -p /p/Cours1A/IPOO/TP2/Exercice_{1..5}/ && touch /p/Cours1A/IPOO/TP2/Exercice_{1..5}/ex.py\ndans Git Bash : clic droit &gt; Paste ou MAJ + INSER\n\nFermez Git Bash\n\n\n\n\n\n\n\nUtilisez le lecteur P:\n\n\n\nIl est important de stocker vos fichiers dans votre lecteur P: et pas sur votre bureau ou votre disque C: car vos fichiers risqueraient de disparaitre !"
+  },
+  {
+    "objectID": "doc/tp/tp2.html#créer-larborscence",
+    "href": "doc/tp/tp2.html#créer-larborscence",
+    "title": "POO, documentation et tests - TP2",
+    "section": "",
+    "text": "└── P\n    └── Cours1A\n        └── IPOO\n            ├── TP1\n            │   ├── Exercice_1\n            │   │   └── ex.py\n            │   ├── Exercice_2\n            │   │   └── ex.py\n            │   ├── ...\n            │   └── Exercice_7\n            │       └── ex.py\n            ├── TP2\n            │   ├── Exercice_1\n            │   │   └── ex.py\n            │   ├── Exercice_2\n            │   ├── ...\nPour prendre la bonne habitude de bien ranger vos fichiers, vous allez créer l’arborscence ci-dessus. Vous pouvez créer chaque dossier et fichier à la main, ou utiliser les commandes ci-dessous (mkdir : make directory):\n\nOuvrez Git Bash\n\nSur le bureau &gt; clic droit &gt; Git Bash here\n\nCollez la commande suivante\n\nmkdir -p /p/Cours1A/IPOO/TP2/Exercice_{1..5}/ && touch /p/Cours1A/IPOO/TP2/Exercice_{1..5}/ex.py\ndans Git Bash : clic droit &gt; Paste ou MAJ + INSER\n\nFermez Git Bash\n\n\n\n\n\n\n\nUtilisez le lecteur P:\n\n\n\nIl est important de stocker vos fichiers dans votre lecteur P: et pas sur votre bureau ou votre disque C: car vos fichiers risqueraient de disparaitre !"
+  },
+  {
+    "objectID": "doc/tp/tp2.html#moodle",
+    "href": "doc/tp/tp2.html#moodle",
+    "title": "POO, documentation et tests - TP2",
+    "section": "2 Moodle",
+    "text": "2 Moodle\n\nAller sur la page du tp2\nOuvrez le sujet et enregistrez le dans /p/Cours1A/IPOO/TP2\nTéléchargez les fichiers .py et placez les dans le bon dossier"
+  },
+  {
+    "objectID": "doc/tp/tp2.html#visual-studio-code",
+    "href": "doc/tp/tp2.html#visual-studio-code",
+    "title": "POO, documentation et tests - TP2",
+    "section": "3 Visual Studio Code",
+    "text": "3 Visual Studio Code\n\nOuvrez Visual Studio Code\n\nFile &gt; Open Folder\nCliquez une seule fois sur Exercice_1\nCliquez sur Sélectionner un dossier\n\ndans votre Explorer à gauche apparait l’arborescence des dossiers et fichiers de Exercice_1"
+  },
+  {
+    "objectID": "doc/tp/tp2.html#exercices",
+    "href": "doc/tp/tp2.html#exercices",
+    "title": "POO, documentation et tests - TP2",
+    "section": "4 Exercices",
+    "text": "4 Exercices\n\n4.1 Exercice 1\nFlake8 est un linter. Il vérifie la mise en forme de votre code et souligne en rouge ce qui ne lui plait pas.\n\nTéléchargez le fichier fonctions.py sur Moodle\nCollez ce fichier dans /p/Cours1A/IPOO/TP2/Exercice_1\nAllez dans VSCode et ouvrez ce fichier\nOuvrez un nouveau Terminal (Terminal &gt; New Terminal)\nSuivez les consignes du sujet\n\n\n\n4.2 Exercice 2\n\nVSCode &gt; File &gt; Open Folder\nCliquez une seule fois sur Exercice_2\nCliquez sur Sélectionner un dossier\n\nLes doctest vu au TP1 ne sont pas utilisés en pratique car cela surcharge les modules. On préfère exporter les tests dans des modules à part. Si l’on veut tester le module produit.py :\n\non crée dans le même package, un module test_produit.py\ndans test_produit.py, on importe produitet pytest :\nimport pytest\nfrom produit import produit\n\n\n\n4.3 Exercice 3\n\nVSCode &gt; File &gt; Open Folder\nCliquez une seule fois sur Exercice_3\nCliquez sur Sélectionner un dossier\n\n\n\n\n\n\n\nAide\n\n\n\n\n\n\nVérifier que les 2 paramètres sont des tuples\nVérifier que les 2 paramètres sont des tuples de longeur 3\nVérifier que tous les éléments de ces tuples sont des int ou float\nVérifier que les éléments de *axes- sont strictements positifs\nTester si le point appartient à l’ellipsoïde\nEcrire des tests dans un autre fichier en s’inspirant de l’exercice 2\n\n\n\n\n\n\n4.4 Exercice 4\n\nInscription\n\nVérifier la validité d’une adresse électronique\n\nExemple pour lever une exception\nif adresse_electronique.count('@') != 1:\n    raise ValueError(\n        \"L'adresse électronique doit contenir un seul symbole @.\"\n    )\n\nValider que le mot de passe respecte les règles\nVérifier que le 2e mot de passe saisi est le même\n\nConnexion\n\nbase_de_donnees : list[tuple[str, str]]\n\nEcrire les tests"
+  },
+  {
+    "objectID": "doc/tp/tp2.html#template-doc",
+    "href": "doc/tp/tp2.html#template-doc",
+    "title": "POO, documentation et tests - TP2",
+    "section": "5 Template doc",
+    "text": "5 Template doc\nVoici un modèle que vous pouvez utiliser pour documenter vos fonctions\ndef ma_fonction(param1, param2):\n    \"\"\"description_courte\n\n    description_longue\n\n    Parameters\n    ----------\n    param1 : type (str, int, float, list...)\n        description_param1\n    param2 : type\n        description_param2\n\n    Returns\n    -------\n    type_retour\n        description_retour\n\n    Examples\n    --------\n    &gt;&gt;&gt; 1+1\n    2\n    &gt;&gt;&gt; print(\"abc\")\n    abc\n    &gt;&gt;&gt; ma_fonction(xxx, yyy)\n    valeur_esperee\n    \"\"\"\n    return None\n\n\nif __name__ == '__main__':\n    a = ma_fonction(p1, p2)\n    print(a)"
+  },
+  {
+    "objectID": "doc/tp/tp1.html",
+    "href": "doc/tp/tp1.html",
+    "title": "POO, documentation et tests - TP1",
+    "section": "",
+    "text": "Créer l’arboresence\n\nà la main\nou en ligne de commande\n\naller dans le dossier où vous souhaitez créer l’arborescence\nclic droit &gt; Git Bash\nmkdir -p IPOO/TP1/Exercice_{1..7}/ && touch IPOO/TP1/Exercice_{1..7}/ex.py\nla commande est dans U:\\1A POO\n\n\nOuvrir Visual Studio Code\nFile &gt; Open Folder &gt; Exercice_x\nFonctions\n\npourquoi -&gt; éviter de faire 2 fois la même chose\ndes entrées, des opérations, des sorties\n\nDocumentation\nTests\nif __name__ == \"__main__\":\nTerminal"
+  },
+  {
+    "objectID": "doc/tp/tp1.html#introduction",
+    "href": "doc/tp/tp1.html#introduction",
+    "title": "POO, documentation et tests - TP1",
+    "section": "",
+    "text": "Créer l’arboresence\n\nà la main\nou en ligne de commande\n\naller dans le dossier où vous souhaitez créer l’arborescence\nclic droit &gt; Git Bash\nmkdir -p IPOO/TP1/Exercice_{1..7}/ && touch IPOO/TP1/Exercice_{1..7}/ex.py\nla commande est dans U:\\1A POO\n\n\nOuvrir Visual Studio Code\nFile &gt; Open Folder &gt; Exercice_x\nFonctions\n\npourquoi -&gt; éviter de faire 2 fois la même chose\ndes entrées, des opérations, des sorties\n\nDocumentation\nTests\nif __name__ == \"__main__\":\nTerminal"
+  },
+  {
+    "objectID": "doc/tp/tp1.html#exercice-1",
+    "href": "doc/tp/tp1.html#exercice-1",
+    "title": "POO, documentation et tests - TP1",
+    "section": "2 exercice 1",
+    "text": "2 exercice 1\n\nRappeler list, tuple, dict, set\nenumerate : index, value\nsorted(liste) vs liste.sort()"
+  },
+  {
+    "objectID": "doc/tp/tp1.html#exercice-2",
+    "href": "doc/tp/tp1.html#exercice-2",
+    "title": "POO, documentation et tests - TP1",
+    "section": "3 exercice 2",
+    "text": "3 exercice 2\n\"*{:{^}{taille_max}}*\".format(ligne, \"^\", taille_max)"
+  },
+  {
+    "objectID": "doc/tp/tp1.html#exercice-4",
+    "href": "doc/tp/tp1.html#exercice-4",
+    "title": "POO, documentation et tests - TP1",
+    "section": "4 exercice 4",
+    "text": "4 exercice 4\nfrom itertools import combinations\n\nprint(list(combinations([1, 2, 3, 4], 2)))"
+  },
+  {
+    "objectID": "doc/tp/tp1.html#aides",
+    "href": "doc/tp/tp1.html#aides",
+    "title": "POO, documentation et tests - TP1",
+    "section": "5 Aides",
+    "text": "5 Aides\n\n5.1 Index error\ntry:\n    if liste1[i] &gt; 0:\n    ...\nexcept IndexError:\n    print(f\"Index error : {i}\")\n\n\n5.2 Parcours de listes\nliste = [\"Alban\", \"Bertille\", \"Corine\"]\n\nfor v in liste:\n    print(v)\n\nfor i in range(len(liste)):\n    print(liste[i])\n\nfor i, v in enumerate(liste):\n    print(f\"index {i} : valeur {v}\")\n\n\n5.3 Parcours de dictionnaires\ndico = {\"a\":\"Alban\", \"b\":\"Bertille\", \"c\":\"Corine\"}\n\n for k, v in dico.items():\n        print(f\"clé {k} : valeur {v}\")"
+  },
+  {
+    "objectID": "doc/tp/tp3.html",
+    "href": "doc/tp/tp3.html",
+    "title": "POO, documentation et tests - TP3",
+    "section": "",
+    "text": "└── P\n    └── Cours1A\n        └── IPOO\n            ├── TP1\n            │   ├── Exercice_1\n            │   │   └── ex.py\n            │   ├── Exercice_2\n            │   │   └── ex.py\n            │   ├── ...\n            │   └── Exercice_7\n            │       └── ex.py\n            ├── TP2\n            │   ├── Exercice_1\n            │   │   └── ex.py\n            │   ├── Exercice_2\n            │   ├── ...\nPour prendre la bonne habitude de bien ranger vos fichiers, vous allez créer l’arborscence ci-dessus. Vous pouvez créer chaque dossier et fichier à la main, ou utiliser les commandes ci-dessous (mkdir : make directory):\n\nOuvrez Git Bash\n\nSur le bureau &gt; clic droit &gt; Git Bash here\n\nCollez la commande suivante\n\nmkdir -p /p/Cours1A/IPOO/TP3/Exercice_{1..4}/\ndans Git Bash : clic droit &gt; Paste ou MAJ + INSER\n\nFermez Git Bash\n\n\n\n\n\n\n\nUtilisez le lecteur P:\n\n\n\nIl est important de stocker vos fichiers dans votre lecteur P: et pas sur votre bureau ou votre disque C: car vos fichiers risqueraient de disparaitre !"
+  },
+  {
+    "objectID": "doc/tp/tp3.html#créer-larborscence",
+    "href": "doc/tp/tp3.html#créer-larborscence",
+    "title": "POO, documentation et tests - TP3",
+    "section": "",
+    "text": "└── P\n    └── Cours1A\n        └── IPOO\n            ├── TP1\n            │   ├── Exercice_1\n            │   │   └── ex.py\n            │   ├── Exercice_2\n            │   │   └── ex.py\n            │   ├── ...\n            │   └── Exercice_7\n            │       └── ex.py\n            ├── TP2\n            │   ├── Exercice_1\n            │   │   └── ex.py\n            │   ├── Exercice_2\n            │   ├── ...\nPour prendre la bonne habitude de bien ranger vos fichiers, vous allez créer l’arborscence ci-dessus. Vous pouvez créer chaque dossier et fichier à la main, ou utiliser les commandes ci-dessous (mkdir : make directory):\n\nOuvrez Git Bash\n\nSur le bureau &gt; clic droit &gt; Git Bash here\n\nCollez la commande suivante\n\nmkdir -p /p/Cours1A/IPOO/TP3/Exercice_{1..4}/\ndans Git Bash : clic droit &gt; Paste ou MAJ + INSER\n\nFermez Git Bash\n\n\n\n\n\n\n\nUtilisez le lecteur P:\n\n\n\nIl est important de stocker vos fichiers dans votre lecteur P: et pas sur votre bureau ou votre disque C: car vos fichiers risqueraient de disparaitre !"
+  },
+  {
+    "objectID": "doc/tp/tp3.html#moodle",
+    "href": "doc/tp/tp3.html#moodle",
+    "title": "POO, documentation et tests - TP3",
+    "section": "2 Moodle",
+    "text": "2 Moodle\n\nAller sur la page du TP3\nOuvrez le sujet et enregistrez le dans /p/Cours1A/IPOO/TP3"
+  },
+  {
+    "objectID": "doc/tp/tp3.html#visual-studio-code",
+    "href": "doc/tp/tp3.html#visual-studio-code",
+    "title": "POO, documentation et tests - TP3",
+    "section": "3 Visual Studio Code",
+    "text": "3 Visual Studio Code\n\nOuvrez Visual Studio Code\n\nFile &gt; Open Folder\nCliquez une seule fois sur Exercice_1\nCliquez sur Sélectionner un dossier\n\ndans votre Explorer à gauche apparait l’arborescence des dossiers et fichiers de Exercice_1"
+  },
+  {
+    "objectID": "doc/tp/tp3.html#exercices",
+    "href": "doc/tp/tp3.html#exercices",
+    "title": "POO, documentation et tests - TP3",
+    "section": "4 Exercices",
+    "text": "4 Exercices\n\n4.1 Exercice 1\n\npour lancer les tests (en collant dans un terminal)\n\npython -m pytest --doctest-modules\n\n⚠️ dans une liste python, le premier élément est à l’index 0\n\nle dernier élément est à l’index len(liste) - 1\n\n\n\nParcourir des listes\nliste = [\"a\", \"b\", \"c\", \"d\", \"e\"]\n\n# Par index\nfor i in range(len(liste)):\n    print(f\"index : {i}, valeur : {liste[i]}\")\n\n# Par valeurs\nfor v in liste:\n    print(v)\n\n# Combiner index et valeurs\nfor i, v in enumerate(liste):\n    print(f\"index : {i}, valeur : {v}\")\n\n\n\n\n\n\nAide\n\n\n\n\n\n\npour écrire les tests, voir TP2 &gt; ex2\nimporter un module ➡️ CM voir diapo 14\ncommencer à l’index 3 : liste[3:]\n\n\n\n\n\n\n\n4.2 Exercice 2\n\nVSCode &gt; File &gt; Open Folder\nCliquez une seule fois sur Exercice_2\nCliquez sur Sélectionner un dossier\n\n\n\n\n\n\n\nNote\n\n\n\nLa fonction map(fonction, liste) permet d’appliquer une fonction à une liste (mais vous n’avez pas le droit de l’utiliser)"
+  },
+  {
+    "objectID": "doc/tp/tp3.html#template-doc",
+    "href": "doc/tp/tp3.html#template-doc",
+    "title": "POO, documentation et tests - TP3",
+    "section": "5 Template doc",
+    "text": "5 Template doc\nVoici un modèle que vous pouvez utiliser pour documenter vos fonctions\ndef ma_fonction(param1, param2):\n    \"\"\"description_courte\n\n    description_longue\n\n    Parameters\n    ----------\n    param1 : type (str, int, float, list...)\n        description_param1\n    param2 : type\n        description_param2\n\n    Returns\n    -------\n    type_retour\n        description_retour\n\n    Examples\n    --------\n    &gt;&gt;&gt; 1+1\n    2\n    &gt;&gt;&gt; print(\"abc\")\n    abc\n    &gt;&gt;&gt; ma_fonction(xxx, yyy)\n    valeur_esperee\n    \"\"\"\n    return None\n\n\nif __name__ == '__main__':\n    a = ma_fonction(p1, p2)\n    print(a)"
+  },
+  {
+    "objectID": "doc/tp/tp3.html#template-pytest",
+    "href": "doc/tp/tp3.html#template-pytest",
+    "title": "POO, documentation et tests - TP3",
+    "section": "6 Template pytest",
+    "text": "6 Template pytest\nimport pytest\nfrom mon_fichier import ma_fonction\n\n@pytest.mark.parametrize(\n    'param1, param2, resultat_attendu',\n    [\n        (1,       1,                2),\n        (1,       2,                3),\n        (2,       2,                4)\n    ]\n)\ndef test_ma_fonction(param1, param2, resultat_attendu):\n    assert ma_fonction(param1, param2) == resultat_attendu"
+  },
+  {
+    "objectID": "doc/tp/tp5.html",
+    "href": "doc/tp/tp5.html",
+    "title": "POO, documentation et tests - TP5",
+    "section": "",
+    "text": "└── P\n    └── Cours1A\n        └── IPOO\n            ├── TP1\n            │   ├── Exercice_1\n            │   │   └── ex.py\n            │   ├── Exercice_2\n            │   │   └── ex.py\n            │   ├── ...\n            │   └── Exercice_7\n            │       └── ex.py\n            ├── TP2\n            │   ├── Exercice_1\n            │   │   └── ex.py\n            │   ├── Exercice_2\n            │   ├── ...\nPour prendre la bonne habitude de bien ranger vos fichiers, vous allez créer l’arborscence ci-dessus. Vous pouvez créer chaque dossier et fichier à la main, ou utiliser les commandes ci-dessous (mkdir : make directory):\n\nOuvrez Git Bash\n\nSur le bureau &gt; clic droit &gt; Git Bash here\n\nCollez la commande suivante\n\nmkdir -p /p/Cours1A/IPOO/TP5/Exercice_{1..5}/\ndans Git Bash : clic droit &gt; Paste ou MAJ + INSER\n\nFermez Git Bash\n\n\n\n\n\n\n\nUtilisez le lecteur P:\n\n\n\nIl est important de stocker vos fichiers dans votre lecteur P: et pas sur votre bureau ou votre disque C: car vos fichiers risqueraient de disparaitre !"
+  },
+  {
+    "objectID": "doc/tp/tp5.html#créer-larborscence",
+    "href": "doc/tp/tp5.html#créer-larborscence",
+    "title": "POO, documentation et tests - TP5",
+    "section": "",
+    "text": "└── P\n    └── Cours1A\n        └── IPOO\n            ├── TP1\n            │   ├── Exercice_1\n            │   │   └── ex.py\n            │   ├── Exercice_2\n            │   │   └── ex.py\n            │   ├── ...\n            │   └── Exercice_7\n            │       └── ex.py\n            ├── TP2\n            │   ├── Exercice_1\n            │   │   └── ex.py\n            │   ├── Exercice_2\n            │   ├── ...\nPour prendre la bonne habitude de bien ranger vos fichiers, vous allez créer l’arborscence ci-dessus. Vous pouvez créer chaque dossier et fichier à la main, ou utiliser les commandes ci-dessous (mkdir : make directory):\n\nOuvrez Git Bash\n\nSur le bureau &gt; clic droit &gt; Git Bash here\n\nCollez la commande suivante\n\nmkdir -p /p/Cours1A/IPOO/TP5/Exercice_{1..5}/\ndans Git Bash : clic droit &gt; Paste ou MAJ + INSER\n\nFermez Git Bash\n\n\n\n\n\n\n\nUtilisez le lecteur P:\n\n\n\nIl est important de stocker vos fichiers dans votre lecteur P: et pas sur votre bureau ou votre disque C: car vos fichiers risqueraient de disparaitre !"
+  },
+  {
+    "objectID": "doc/tp/tp5.html#moodle",
+    "href": "doc/tp/tp5.html#moodle",
+    "title": "POO, documentation et tests - TP5",
+    "section": "2 Moodle",
+    "text": "2 Moodle\n\nAller sur la page du TP5\nOuvrez le sujet et enregistrez le dans /p/Cours1A/IPOO/TP5"
+  },
+  {
+    "objectID": "doc/tp/tp5.html#rappels",
+    "href": "doc/tp/tp5.html#rappels",
+    "title": "POO, documentation et tests - TP5",
+    "section": "3 Rappels",
+    "text": "3 Rappels\n\n3.1 Classes et Objets\n\nune classe est comme un “moule” qui sert à fabriquer des objets\nun objet est une instance de classe\nune classe est composée\n\nd’attributs : ce qu’elle est\nde méthodes : ce qu’elle peut faire\n\n\n\n\n\n\n\n\nImportant\n\n\n\n\nun nom de classe s’écrit en CamelCase (majuscule à chaque mot)\nune seule classe par fichier\n\nune classe = un module\nle nom du module s’écrit en snake_case (mots en minuscules séparés par des _)\n\n\n\n\n\nExemple : classe Frac\n\n\nfrac.py\n\nclass Frac:\n    def __init__(self, num, denom=1) -&gt; None:\n        \"\"\"Constructeur\"\"\"        \n        if denom == 0:\n            raise ValueError(\"le dénominateur ne peut être nul\")\n        self.num = num \n        self.denom = denom\n\n    def add(self, autre_fraction):\n        \"\"\"Additionne deux fractions\"\"\"\n        numerateur = self.num * autre_fraction.denom + autre_fraction.num * self.denom \n        denominateur = self.denom * autre_fraction.denom \n        return Frac(numerateur, denominateur)\n\n    def __str__(self) -&gt; str:\n        \"\"\"Retourne une chaîne affichant la fraction\"\"\"\n        return f\"{self.num} / {self.denom}\"\n\n\n\nExemple : Créer des objets Frac\n\n\n__main__.py\n\nfrom frac import Frac\n\nf1 = Frac(1, 2)\nf2 = Frac(1, 4)\n\nf3 = f1.add(f2)\nprint(f3)\n\n\n\n\n3.2 Tests\n\nDoctest\n\nécrits dans la documentation sous le mot clé Examples\naprés les &gt;&gt;&gt; : code Python exécuté\n\nsi le code renvoie un résultat, écrire ce résultat à la ligne en dessous\nsinon, écrire le code suivant\n\n\nReprenons la classe Frac ci-dessus\n\n\nfrac.py\n\nclass Frac:\n    def __init__(self, num, denom=1) -&gt; None:\n        \"\"\"Constructeur\n\n        Examples\n        --------        \n        &gt;&gt;&gt; f1 = Frac(1, 2)\n        &gt;&gt;&gt; f1.num, f1.denom\n        (1, 2)\n        &gt;&gt;&gt; f2 = Frac(3)\n        &gt;&gt;&gt; f2.num, f2.denom\n        (3, 0)\n        &gt;&gt;&gt; f4 = Frac(4, 0)\n        Traceback (most recent call last):\n        ...\n        ValueError: le dénominateur ne peut être nul\n        \"\"\"        \n        if denom == 0:\n            raise ValueError(\"le dénominateur ne peut être nul\")\n        self.num = num \n        self.denom = denom\n\n    def add(self, autre_fraction):\n        \"\"\"Additionne deux fractions\n        \n        Examples\n        --------\n        &gt;&gt;&gt; f1 = Frac(1, 2)\n        &gt;&gt;&gt; f2 = Frac(1, 3)\n        &gt;&gt;&gt; f3 = f1.add(f2)\n        &gt;&gt;&gt; f3.num\n        5\n        &gt;&gt;&gt; f3.denom\n        6\n        \"\"\"\n        numerateur = self.num * autre_fraction.denom + autre_fraction.num * self.denom \n        denominateur = self.denom * autre_fraction.denom \n        return Frac(numerateur, denominateur)\n\n\n\nLancer les tests\nPlusieurs possibilités :\n\nColler ceci en bas de votre classe, puis cliquer sur l’icone éxéctuer ▶️\n\nif __name__ == '__main__':\n    import doctest    \n\n    doctest.testmod(verbose=True)\n\ndans un terminal : python -m pytest --doctest-modules\nutiliser l’interface de VSCode (à gauche icone Testing en forme de fiole triangulaire)"
+  },
+  {
+    "objectID": "doc/tp/tp5.html#exercices",
+    "href": "doc/tp/tp5.html#exercices",
+    "title": "POO, documentation et tests - TP5",
+    "section": "4 Exercices",
+    "text": "4 Exercices\n\n4.1 Exercice 1\n\nOuvrez Visual Studio Code\n\nFile &gt; Open Folder\nCliquez une seule fois sur Exercice_1\nCliquez sur Sélectionner un dossier\n\ndans votre Explorer à gauche apparait l’arborescence des dossiers et fichiers de Exercice_1\n\n\ncréez un fichier article.py\n\ndans ce ficher, créez la classe Article (vous pouvez utiliser le template de classe ci-dessous)\n\n\n\nAttributs privés\nEn rendant les attributs de classe privés, vous pouvez contrôler strictement l’accès à ces attributs.\nVous pouvez fournir des méthodes spécifiques : “getter” et “setter”, pour manipuler ces attributs de manière contrôlée et sûre.\nExemple :\nclass Article:\n    def __init__(self, reference, prix_ht):\n        self.reference = reference\n        self.__prix_ht = prix_ht\n\n    def obtenir_prix_ht(self):\n        '''Getter'''\n        return self.__prix_ht\n\n    def modifier_prix_ht(self, nouveau_prix):\n        '''Setter'''\n        if nouveau_prix &gt; 0:\n            self.__prix_ht = nouveau_prix\n\n\nif __name__ == \"__main__\":\n    a = Article(\"A12B5\", 5)\n\n    # print(a.__prix_ht)\n    # 'Article' object has no attribute '__prix_ht'\n\n    a.modifier_prix_ht(10)\n    print(a.obtenir_prix_ht())\n    # 10\n\n\n\n\n\n\nPour aller plus loin\n\n\n\n\n\nQuand vous déclarez un attribut privé dans votre constructeur, Python va renommer votre attribut en ajoutant un préfixe _ClassName\nDans l’exemple ci-dessus, l’attribut __prix_ht deviendra _Article__prix_ht.\na = Article(\"A12B5\", 5)\nprint(a._Article__prix_ht)\n# 5\nSi vous tentez de modifier l’attribut __prix_ht, cela va en fait créer un nouvel attribut\na = Article(\"A12B5\", 5)\na.__prix_ht = 10\nprint(a.__prix_ht)\n# 10\nprint(a._Article__prix_ht)\n# 5\n\n\n\n\n\n\n4.2 Exercice 2\n\nVSCode &gt; File &gt; Open Folder\nCliquez une seule fois sur Exercice_2\nCliquez sur Sélectionner un dossier\nCréer le fichier flacon.py contenant la classe Flacon\n\ncorrection UML : la méthode remplir() renvoie un booléen\n\nN’oubliez pas la doc et les tests\n\nPour celles et ceux qui veulent tenter de nouvelles expériences, écrivez les doctests avant de coder vos fonctions\n\n\n\n\n\n\n\n\nAide\n\n\n\n\n\n\nméthode remplir() : pensez à bien effectuer toutes les vérifications\nméthode transvaser() : gardez bien en tête les 2 égalités suivantes pour vos calculs\n\n\\[volume = volume\\_eau + volume\\_sirop\\]\n\\[concentration = \\frac{volume\\_sirop}{volume\\_eau + volume\\_sirop}\\]\n\n\n\n\n\n4.3 Exercice 3\n\nVSCode &gt; File &gt; Open Folder\nCliquez une seule fois sur Exercice_3\nCliquez sur Sélectionner un dossier\nCréer le fichier point.py contenant la classe Point\n\nles attributs sont privés\n\nN’oubliez pas la doc et les tests !\nCréer le fichier ligne_polygonale.py contenant la classe LignePolygonale\n\nImportez la classe Point avec from point import Point\n\n\n\n\n\n\n\n\n\nAide\n\n\n\n\n\n\nModule math"
+  },
+  {
+    "objectID": "doc/tp/tp5.html#template-classe",
+    "href": "doc/tp/tp5.html#template-classe",
+    "title": "POO, documentation et tests - TP5",
+    "section": "5 Template classe",
+    "text": "5 Template classe\nclass MaClasse:\n    '''titre_ma_classe\n\n    Description\n\n    Attributes\n    ----------\n    attribut_1 : type_attribut_1 (str, int, float, list, bool, function...)\n        desc_attribut_1\n        \n    attribut_2 : type_attribut_2\n        desc_attribut_2.\n        Valeur par défaut : False\n        \n    attribut_3 : type_attribut_3\n        desc_attribut_3. Initialisé à 0\n    '''\n    \n    def __init__(self, parametre_1, parametre_2):\n        '''Constructeur de l'objet\n\n        Parameters\n        ----------\n        parametre_1 : type_parametre_1\n            desc_parametre_1\n            \n        parametre_2 : type_parametre_2\n            desc_parametre_2\n        '''\n        self.attribut_1 = parametre_1\n        self.attribut_2 = parametre_2\n        self.attribut_3 = 0\n\n    def ma_methode(self, param1):\n        '''desc_courte_ma_methode\n\n        desc_longue_ma_methode_facultatif       \n\n        Parameters\n        ----------\n        param1 : type\n            desc_param_1\n            \n        Returns\n        -------\n        type\n            desc_retour\n\n        Examples\n        --------\n        &gt;&gt;&gt; mon_obj = ma_classe(\"toto\")\n        &gt;&gt;&gt; mon_obj.ma_methode(\"xxx\")\n        2\n        '''\n        return 2\n\n    def __str__(self):\n        '''Conversion de l'objet en chaîne de caractères\n        \n        Examples\n        --------\n        &gt;&gt;&gt; mon_obj = ma_classe(\"toto\")\n        &gt;&gt;&gt; print(mon_obj)\n        Classe d'attribut_1 égal à toto\n        '''\n        return f\"Classe d'attribut_1 égal à {self.attribut_1}\""
+  },
+  {
+    "objectID": "doc/tp/tp5.html#template-fonction",
+    "href": "doc/tp/tp5.html#template-fonction",
+    "title": "POO, documentation et tests - TP5",
+    "section": "6 Template fonction",
+    "text": "6 Template fonction\nVoici un modèle que vous pouvez utiliser pour documenter vos fonctions\ndef ma_fonction(param1, param2):\n    \"\"\"description_courte\n\n    description_longue\n\n    Parameters\n    ----------\n    param1 : type (str, int, float, list...)\n        description_param1\n    param2 : type\n        description_param2\n\n    Returns\n    -------\n    type_retour\n        description_retour\n\n    Examples\n    --------\n    &gt;&gt;&gt; 1+1\n    2\n    &gt;&gt;&gt; print(\"abc\")\n    abc\n    &gt;&gt;&gt; ma_fonction(xxx, yyy)\n    valeur_esperee\n    \"\"\"\n    return None\n\n\nif __name__ == '__main__':\n    a = ma_fonction(p1, p2)\n    print(a)"
+  },
+  {
+    "objectID": "doc/tp/tp5.html#template-pytest",
+    "href": "doc/tp/tp5.html#template-pytest",
+    "title": "POO, documentation et tests - TP5",
+    "section": "7 Template pytest",
+    "text": "7 Template pytest\nimport pytest\nfrom mon_fichier import ma_fonction\n\n@pytest.mark.parametrize(\n    'param1, param2, resultat_attendu',\n    [\n        (1,       1,                2),\n        (1,       2,                3),\n        (2,       2,                4)\n    ]\n)\ndef test_ma_fonction(param1, param2, resultat_attendu):\n    assert ma_fonction(param1, param2) == resultat_attendu"
   }
 ]

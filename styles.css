@@ -1,20 +1,45 @@
+/* css styles */
+
+/************************************************************/
+/* Titles                                                   */
+/************************************************************/
+
 h1,h2,h3,h4 {
-    color:#447099;
-  }
+  color:#447099;
+}
 
 h2::before {
-    content: '\1F4CD'; /*Unicode Punaise*/
-    margin-right: 8px;
-  }
+  content: '\25B6'; /*Arrow Forward*/
+  margin-right: 8px;
+}
 
 h3::before {
-    content: '\1F538'; /*Losange orange*/
-    margin-right: 8px;
-  }
+  content: '\1F538'; /*Orange Diamond*/
+  margin-right: 8px;
+}
 
 h4::before {
-    content: '\1F7B4';  /*Asterisque*/
-    margin-right: 8px;
-  }
+  content: '\1F4CD';  /*Pushpin*/
+  margin-right: 8px;
+}
 
+.header-section-number:after { /*add a dot after the section number (1 title -> 1. title)*/
+  content: ".";
+} 
 
+/************************************************************/
+/* Others                                                   */
+/************************************************************/
+
+.column{
+  width: 50%;
+  padding: 5px
+}
+
+img{
+max-width: 100%
+} 
+
+p{
+text-align: justify
+}
