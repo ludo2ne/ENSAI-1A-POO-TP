@@ -193,56 +193,112 @@ Vous pouvez fournir des méthodes spécifiques : "getter" et "setter", pour mani
 
 Exemple :
 
-```{.python}
+
+:::: {.columns}
+
+::: {.column}
+
+
+::: {.callout-important title="Public"}
+
+Avec un attribut `public`, aucun controle n'est effectué sur *prix*.  
+Il est alors possible à l'extérieur de l'objet de :
+
+- obtenir sa valeur
+- modifier sa valeur, et même son type
+
+```{.python filename="article.py"}
 class Article:
-    def __init__(self, reference, prix_ht):
-        self.reference = reference
-        self.__prix_ht = prix_ht
-
-    def obtenir_prix_ht(self):
-        '''Getter'''
-        return self.__prix_ht
-
-    def modifier_prix_ht(self, nouveau_prix):
-        '''Setter'''
-        if nouveau_prix > 0:
-            self.__prix_ht = nouveau_prix
-
-
-if __name__ == "__main__":
-    a = Article("A12B5", 5)
-
-    # print(a.__prix_ht)
-    # 'Article' object has no attribute '__prix_ht'
-
-    a.modifier_prix_ht(10)
-    print(a.obtenir_prix_ht())
-    # 10
+    def __init__(self, prix):
+        self.prix = prix
 ```
+
+```{.python filename="main.py"}
+a = Article(5)
+
+a.prix = "toto"
+a.prix = True
+
+print(a.prix)
+# True
+```
+:::
+
+:::
+
+
+::: {.column}
+
+::: {.callout-important title="Privé"}
+
+Avec un attribut `privé`, il est possible de mettre en place des controles
+
+```{.python filename="article.py"}
+class Article:
+    def __init__(self, prix):
+        self.__prix = prix
+
+    def obtenir_prix(self):
+        '''Getter'''
+        return self.__prix
+
+    def modifier_prix(self, new_prix):
+        '''Setter'''
+        if isinstance(new_prix, int) and new_prix > 0:
+            self.__prix = new_prix
+```
+
+```{.python filename="main.py"}
+a = Article(5)
+
+# print(a.__prix)
+# 'Article' object has no attribute '__prix'
+
+a.modifier_prix(10)
+print(a.obtenir_prix())
+# 10
+```
+:::
+
+:::
+
+::::
+
 
 ::: {.callout-note collapse="true" title="Pour aller plus loin"}
 Quand vous déclarez un attribut privé dans votre constructeur, Python va renommer votre attribut en ajoutant un préfixe *\_ClassName*
 
-Dans l'exemple ci-dessus, l'attribut *\_\_prix\_ht* deviendra *\_Article\_\_prix\_ht*.
+Dans l'exemple ci-dessus, l'attribut *\_\_prix* deviendra *\_Article\_\_prix*.
 
 ```{.python}
 a = Article("A12B5", 5)
-print(a._Article__prix_ht)
+print(a._Article__prix)
 # 5
 ```
 
-Si vous tentez de modifier l'attribut *\_\_prix\_ht*, cela va en fait créer un nouvel attribut
+Si vous tentez de modifier l'attribut *\_\_prix*, cela va en fait créer un nouvel attribut
 
 ```{.python}
 a = Article("A12B5", 5)
-a.__prix_ht = 10
-print(a.__prix_ht)
+a.__prix = 10
+print(a.__prix)
 # 10
-print(a._Article__prix_ht)
+print(a._Article__prix)
 # 5
 ```
 :::
 
+
+
+::: {.callout-important title="Public, privé, protected"}
+
+|             | Code UML | Préfixe Python | Description                                                                                                                             |
+|-------------|----------|----------------|-----------------------------------------------------------------------------------------------------------------------------------------|
+| **Public**  | `+`      |                | Par défaut, tous les attributs et méthodes dans une classe Python sont considérés comme publics. Cela signifie qu'ils peuvent être accédés depuis l'extérieur de la classe. |
+| **Privé**   | `-`      | `__`           | Pas natif en Python. Il ne peut être accédé qu'à l'intérieur de la classe elle-même.                                                   |
+| **Protected** | `#`     | `_`            | Pas natif en Python. Seules la classe possédant l’élément et les classes filles peuvent y accéder.                                     |
+
+:::
 
 
 ### Exercice 2
