@@ -14,3 +14,4 @@ from: markdown+emoji
 - [TP3](doc/tp/tp3.qmd) : Structures hétérogènes de données et tests
 - [TP4](doc/tp/tp4.qmd) : Classes, objets, attributs et méthodes en Python
 - [TP5](doc/tp/tp5.qmd) : Classes et diagrammes UML
+- [TP6](doc/tp/tp6.qmd) : Relations entre classes

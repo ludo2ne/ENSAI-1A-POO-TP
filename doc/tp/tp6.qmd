@@ -1,6 +1,6 @@
 ---
-title: "POO, documentation et tests - TP5"
-description: "Classes et diagrammes UML"
+title: "POO, documentation et tests - TP6"
+description: "Relations entre classes"
 author: "Ludovic Deneuville"
 format:
   html:
@@ -39,7 +39,7 @@ Vous pouvez créer chaque dossier et fichier à la main, ou utiliser les command
 - [ ] Ouvrez `Git Bash`
   - Sur le bureau > clic droit > **Git Bash here**
 - [ ] Collez la commande suivante
-  - `mkdir -p /p/Cours1A/IPOO/TP5/Exercice_{1..5}/`
+  - `mkdir -p /p/Cours1A/IPOO/TP6/Exercice_{1..3}/`
   - dans Git Bash : clic droit > Paste ou MAJ + INSER
 - [ ] Fermez *Git Bash*
 
@@ -51,114 +51,14 @@ Il est important de stocker vos fichiers dans votre lecteur `P:` et pas sur votr
 
 ## Moodle
 
-- [ ] Aller sur la page du [TP5](https://foad-moodle.ensai.fr/pluginfile.php/27920/mod_resource/content/4/TP5%20-%20Sujet.pdf){.external target="_blank"}
-- [ ] Ouvrez le sujet et enregistrez le dans `/p/Cours1A/IPOO/TP5`
+- [ ] Aller sur la page du [TP6](https://foad-moodle.ensai.fr/pluginfile.php/33287/mod_resource/content/2/TP6%20-%20Sujet.pdf){.external target="_blank"}
+- [ ] Ouvrez le sujet et enregistrez le dans `/p/Cours1A/IPOO/TP6`
+- [ ] Téléchargez le dossier `Exercice_2`
 
 
 ## Rappels
 
-### Classes et Objets
-
-- une `classe` est comme un *"moule"* qui sert à fabriquer des objets
-- un `objet` est une *instance* de classe
-- une classe est composée
-  - d'attributs : ce qu'elle est
-  - de méthodes : ce qu'elle peut faire
-
-:::{.callout-important}
-- un nom de classe s'écrit en *CamelCase* (majuscule à chaque mot)
-- une seule classe par fichier
-  - une classe = un module
-  - le nom du module s'écrit en *snake_case* (mots en minuscules séparés par des _)
-:::
-
-#### Exemple : classe Frac
-
-```{.python filename="frac.py"}
-class Frac:
-    def __init__(self, num, denom=1) -> None:
-        """Constructeur"""        
-        if denom == 0:
-            raise ValueError("le dénominateur ne peut être nul")
-        self.num = num 
-        self.denom = denom
-
-    def add(self, autre_fraction):
-        """Additionne deux fractions"""
-        numerateur = self.num * autre_fraction.denom + autre_fraction.num * self.denom 
-        denominateur = self.denom * autre_fraction.denom 
-        return Frac(numerateur, denominateur)
-
-    def __str__(self) -> str:
-        """Retourne une chaîne affichant la fraction"""
-        return f"{self.num} / {self.denom}"
-```
-
-#### Exemple : Créer des objets Frac
-
-```{.python filename="__main__.py"}
-from frac import Frac
-
-f1 = Frac(1, 2)
-f2 = Frac(1, 4)
-
-f3 = f1.add(f2)
-print(f3)
-```
-
-### Tests
-
-#### Doctest
-
-- écrits dans la documentation sous le mot clé `Examples`
-- aprés les `>>>` : code Python exécuté
-  - si le code renvoie un résultat, écrire ce résultat à la ligne en dessous
-  - sinon, écrire le code suivant
-
-Reprenons la classe *Frac* ci-dessus
-
-```{.python filename="frac.py"}
-class Frac:
-    def __init__(self, num, denom=1) -> None:
-        """Constructeur
-
-        Examples
-        --------        
-        >>> f1 = Frac(1, 2)
-        >>> f1.num, f1.denom
-        (1, 2)
-        >>> f2 = Frac(3)
-        >>> f2.num, f2.denom
-        (3, 0)
-        >>> f4 = Frac(4, 0)
-        Traceback (most recent call last):
-        ...
-        ValueError: le dénominateur ne peut être nul
-        """        
-        if denom == 0:
-            raise ValueError("le dénominateur ne peut être nul")
-        self.num = num 
-        self.denom = denom
-
-    def add(self, autre_fraction):
-        """Additionne deux fractions
-        
-        Examples
-        --------
-        >>> f1 = Frac(1, 2)
-        >>> f2 = Frac(1, 3)
-        >>> f3 = f1.add(f2)
-        >>> f3.num
-        5
-        >>> f3.denom
-        6
-        """
-        numerateur = self.num * autre_fraction.denom + autre_fraction.num * self.denom 
-        denominateur = self.denom * autre_fraction.denom 
-        return Frac(numerateur, denominateur)
-```
-
-#### Lancer les tests 
+### Lancer les tests
 
 Plusieurs possibilités :
 
@@ -173,20 +73,7 @@ Plusieurs possibilités :
 3. utiliser l'interface de VSCode (à gauche icone Testing en forme de fiole triangulaire)
 
 
-## Exercices
-
-### Exercice 1
-
-- [ ] Ouvrez Visual Studio Code
-  - [ ] File > Open Folder
-  - [ ] Cliquez [une seule fois]{.underline} sur **Exercice_1**
-  - [ ] Cliquez sur `Sélectionner un dossier`
-    - dans votre *Explorer* à gauche apparait l'arborescence des dossiers et fichiers de **Exercice_1**
-- [ ] créez un fichier `article.py`
-  - [ ] dans ce ficher, créez la classe `Article` (vous pouvez utiliser le template de classe ci-dessous)
-
-
-#### Attributs privés
+### Attributs privés
 
 En rendant les attributs de classe privés, vous pouvez contrôler strictement l'accès à ces attributs.  
 Vous pouvez fournir des méthodes spécifiques : "getter" et "setter", pour manipuler ces attributs de manière contrôlée et sûre.
@@ -303,23 +190,95 @@ print(a._Article__prix)
 :::
 
 
+### Héritage et classes abstraites
+
+Une classe abstraite ne peut pas être instanciée, c'est à dire qu'on ne peut pas créer d'objets de cette classe.
+
+L'intérêt est de fournir un socle commun à des classes filles.
+
+Exemple :
+
+- les voitures et les vélos ont des attributs et méthodes communes
+- tout ce qui leur est commun est codé dans la classe `Vehicule` dont ils héritent
+- ce qui les différencie est codé dans leurs propres classes
+- la partie commune du constructeur est codé dans la classe mère
+- la méthode *accelerer()* est déclarée abstraite dans la classe mère
+  - ce qui veut dire que [toutes]{.underline} les classes filles devront redéfinir cette méthode
+
+```{.python}
+from abc import ABC, abstractmethod
+
+class Vehicule(ABC):
+    def __init__(self, nb_roues):
+        self.nb_roues = nb_roues
+        self.vitesse = 0
+
+    @abstractmethod
+    def accelerer(self):
+        pass
+
+class Voiture(Vehicule):
+    def __init__(self, marque, nb_roues):
+        super().__init__(nb_roues=4)
+        self.marque = marque
+
+    def accelerer(self):
+        self.vitesse += 20
+        
+class Velo(Vehicule):
+    def __init__(self, porte_bagages, nb_roues):
+        super().__init__(nb_roues=2)
+        self.porte_bagages = porte_bagages
+
+    def accelerer(self):
+        self.vitesse += 5
+```
+
+
+## Exercices
+
+### Exercice 1
+
+- [ ] Ouvrez Visual Studio Code
+  - [ ] File > Open Folder
+  - [ ] Cliquez [une seule fois]{.underline} sur **Exercice_1**
+  - [ ] Cliquez sur `Sélectionner un dossier`
+    - dans votre *Explorer* à gauche apparait l'arborescence des dossiers et fichiers de **Exercice_1**
+- [ ] créez les fichier `personne.py` et `entreprise.py`
+  - [ ] ils contiennent respectivement les classes `Personne` et `Entreprise`
+
+::: {.callout-caution}
+
+- attributs publics : arguments des constructeurs des classes
+- attributs protégés : initialisés dans les constructeurs
+
+:::
+
+- [ ] Créez la classe `Emploi` dans un fichier `emploi.py`
+
+
 ### Exercice 2
 
 - [ ] VSCode > File > Open Folder
 - [ ] Cliquez [une seule fois]{.underline} sur **Exercice_2**
 - [ ] Cliquez sur `Sélectionner un dossier`
-- [ ] Créer le fichier `flacon.py` contenant la classe `Flacon`
-  - correction UML : la méthode *remplir()* renvoie un booléen
-- [ ] N'oubliez pas la doc et les tests
-  - Pour celles et ceux qui veulent tenter de nouvelles expériences, écrivez les doctests avant de coder vos fonctions
+- [ ] Recherchez dans les fichiers les `# TODO` et complétez
 
-:::{.callout-tip collapse="true" title="Aide"}
-- méthode *remplir()* : pensez à bien effectuer toutes les vérifications
-- méthode *transvaser()* : gardez bien en tête les 2 égalités suivantes pour vos calculs
+:::{.callout-tip title="Aide"}
 
-$$volume = volume\_eau + volume\_sirop$$
+- [ ] Commencez par les classes `Aeroport`, `Compagnie` et `Vol`
+- Dans les constructeurs, vérifier tous les types
+  ```{.python}
+  def __init__(self, nom)
+      if not isinstance(nom, str):
+          raise TypeError("Le nom doit être une chaîne de caractères.")
+      self.nom = nom
+  ```
+- [ ] N'oubliez pas les [imports]{.underline}
+  ```{.python}  
+  from aeroport import Aeroport
+  ```
 
-$$concentration = \frac{volume\_sirop}{volume\_eau + volume\_sirop}$$
 :::
 
 
@@ -328,11 +287,21 @@ $$concentration = \frac{volume\_sirop}{volume\_eau + volume\_sirop}$$
 - [ ] VSCode > File > Open Folder
 - [ ] Cliquez [une seule fois]{.underline} sur **Exercice_3**
 - [ ] Cliquez sur `Sélectionner un dossier`
-- [ ] Créer le fichier `point.py` contenant la classe `Point`
-  - les attributs sont privés
-- [ ] N'oubliez pas la doc et les tests !
-- [ ] Créer le fichier `ligne_polygonale.py` contenant la classe `LignePolygonale`
-  - Importez la classe *Point* avec `from point import Point`
+- [ ] Écrivez le diagramme UML
+- [ ] Codez les classes
+
+
+::: {.callout-tip collapse="true"}
+
+- une classe abstraite hérite de *ABC*
+- une méthode abstraite est précédée par le décorateur *@abstractmethod*
+- le mot clé `super()` permet de faire référence à la classe mère
+
+```{.python}
+from abc import ABC, abstractmethod
+```
+
+:::
 
 ---
 
