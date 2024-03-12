@@ -184,6 +184,10 @@ window.Quarto = {
     <a class="dropdown-item" href="../../doc/tp/tp5.html">
  <span class="dropdown-text">TP n°5</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../../doc/tp/tp6.html">
+ <span class="dropdown-text">TP n°6</span></a>
+  </li>  
     </ul>
   </li>
 </ul>
@@ -594,11 +598,11 @@ Pour aller plus loin
 <div class="callout-body-container callout-body">
 <p>Quand vous déclarez un attribut privé dans votre constructeur, Python va renommer votre attribut en ajoutant un préfixe <em>_ClassName</em></p>
 <p>Dans l’exemple ci-dessus, l’attribut <em>__prix</em> deviendra <em>_Article__prix</em>.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> Article(<span class="st">"A12B5"</span>, <span class="dv">5</span>)</span>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> Article(<span class="dv">5</span>)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a._Article__prix)</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Si vous tentez de modifier l’attribut <em>__prix</em>, cela va en fait créer un nouvel attribut</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> Article(<span class="st">"A12B5"</span>, <span class="dv">5</span>)</span>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> Article(<span class="dv">5</span>)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>a.__prix <span class="op">=</span> <span class="dv">10</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a.__prix)</span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 10</span></span>
@@ -617,7 +621,7 @@ Public, privé, protected
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<table class="table">
+<table class="table-striped table-hover table-success table">
 <colgroup>
 <col style="width: 7%">
 <col style="width: 5%">
@@ -627,28 +631,28 @@ Public, privé, protected
 <thead>
 <tr class="header">
 <th></th>
-<th>Code UML</th>
-<th>Préfixe Python</th>
+<th style="text-align: center;">Code UML</th>
+<th style="text-align: center;">Préfixe Python</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><strong>Public</strong></td>
-<td><code>+</code></td>
-<td></td>
+<td style="text-align: center;"><code>+</code></td>
+<td style="text-align: center;"></td>
 <td>Par défaut, tous les attributs et méthodes dans une classe Python sont considérés comme publics. Cela signifie qu’ils peuvent être accédés depuis l’extérieur de la classe.</td>
 </tr>
 <tr class="even">
 <td><strong>Privé</strong></td>
-<td><code>-</code></td>
-<td><code>__</code></td>
+<td style="text-align: center;"><code>-</code></td>
+<td style="text-align: center;"><code>__</code></td>
 <td>Pas natif en Python. Il ne peut être accédé qu’à l’intérieur de la classe elle-même.</td>
 </tr>
 <tr class="odd">
 <td><strong>Protected</strong></td>
-<td><code>#</code></td>
-<td><code>_</code></td>
+<td style="text-align: center;"><code>#</code></td>
+<td style="text-align: center;"><code>_</code></td>
 <td>Pas natif en Python. Seules la classe possédant l’élément et les classes filles peuvent y accéder.</td>
 </tr>
 </tbody>
