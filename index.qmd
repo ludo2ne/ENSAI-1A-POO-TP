@@ -15,3 +15,4 @@ from: markdown+emoji
 - [TP4](doc/tp/tp4.qmd) : Classes, objets, attributs et méthodes en Python
 - [TP5](doc/tp/tp5.qmd) : Classes et diagrammes UML
 - [TP6](doc/tp/tp6.qmd) : Relations entre classes
+- [TD7](doc/tp/td7.qmd) : Héritages, relations, UML, modélisation

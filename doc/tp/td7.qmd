@@ -1,0 +1,118 @@
+---
+title: "POO, documentation et tests - TD1"
+description: "Héritages, relations, UML, modélisation"
+author: "Ludovic Deneuville"
+format:
+  html:
+    toc: true
+    toc-location: left
+    toc-expand: 3
+from: markdown+emoji
+number-sections: true
+number-depth: 3
+---
+
+## UML
+
+### Dépendance
+
+- Lorsqu'un changement dans une classe implique la modiﬁcation du comportement d'une autre classe
+- Dans l'exemple, l'*état* de la fenêtre va dépendre de l'attribut *outils* de la personne
+
+```{mermaid}
+classDiagram
+    direction LR
+    class Personne {
+        - nom: string
+        - age: int
+    }
+
+    class Fenetre {
+        + etat: string
+        + opération(p : Personne)
+    }
+
+    Personne ..> Fenetre
+```
+
+### Association
+
+- relation structurelle entre deux classes
+- il est possible de naviguer d'un objet d'une classe, à un ou plusieurs objets de l'autre classe
+
+```{mermaid}
+classDiagram
+    direction LR
+    class Entreprise {
+        - nom: string
+        - adresse: string
+    }
+    
+    class Personne {
+        - nom: string
+        - age: int
+    }
+    
+    Entreprise "*" -- "*" Personne : emploie
+```
+
+### Agrégation
+
+- lorsqu'un élément est constitué d'un autre
+- Supprimer l'agrégat (vélo) ne supprime pas le composant (roue)
+  - ici on peut imaginer retirer la roue d'un vélo pour la mettre sur un autre vélo
+
+```{mermaid}
+classDiagram
+    direction LR
+    class Velo {
+        - couleur: string
+    }
+    
+    class Roue {
+        - taille: int
+    }
+    
+    Velo "1" o-- "2" Roue : posséde
+```
+
+
+### Composition
+
+- le composant est détruit lorsque l'agrégat est détruit
+
+```{mermaid}
+classDiagram
+    direction LR
+    class Entreprise {
+        - nom: string
+        - adresse: string
+    }
+    
+    class Departement {
+        - nom: string
+    }
+    
+    Entreprise "1" *-- "*" Departement : a
+```
+
+### Généralisation
+
+- Héritage
+
+```{mermaid}
+classDiagram
+    direction TB
+    class Animal{
+        + age: int
+        + gender: String
+        + isMammal() : bool
+        + mate()
+    }
+    class Duck{
+        + beakColor: String
+        + swim()
+        + quack()
+    }
+    Animal <|-- Duck
+```

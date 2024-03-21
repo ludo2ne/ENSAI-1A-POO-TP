@@ -303,14 +303,6 @@ from abc import ABC, abstractmethod
 
 :::
 
----
-
-::: {.callout-tip collapse="true" title="Aide"}
-
-- Module [math](https://docs.python.org/3/library/math.html){.external target="_blank"}
-
-:::
-
 
 
 ## Template classe
