@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Ludovic Deneuville">
-<meta name="description" content="Structures hétérogènes de données et tests">
+<meta name="description" content="Héritages, relations, UML, modélisation">
 
-<title>POO, doc et tests - POO, documentation et tests - TP3</title>
+<title>POO, doc et tests - POO, documentation et tests - TD1</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,40 +21,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -104,6 +70,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../../styles.css">
@@ -193,16 +162,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#créer-larborscence" id="toc-créer-larborscence" class="nav-link active" data-scroll-target="#créer-larborscence"><span class="header-section-number">1</span> Créer l’arborscence</a></li>
-  <li><a href="#moodle" id="toc-moodle" class="nav-link" data-scroll-target="#moodle"><span class="header-section-number">2</span> Moodle</a></li>
-  <li><a href="#visual-studio-code" id="toc-visual-studio-code" class="nav-link" data-scroll-target="#visual-studio-code"><span class="header-section-number">3</span> Visual Studio Code</a></li>
-  <li><a href="#exercices" id="toc-exercices" class="nav-link" data-scroll-target="#exercices"><span class="header-section-number">4</span> Exercices</a>
+  <li><a href="#uml" id="toc-uml" class="nav-link active" data-scroll-target="#uml"><span class="header-section-number">1</span> UML</a>
   <ul class="collapse">
-  <li><a href="#exercice-1" id="toc-exercice-1" class="nav-link" data-scroll-target="#exercice-1"><span class="header-section-number">4.1</span> Exercice 1</a></li>
-  <li><a href="#exercice-2" id="toc-exercice-2" class="nav-link" data-scroll-target="#exercice-2"><span class="header-section-number">4.2</span> Exercice 2</a></li>
+  <li><a href="#dépendance" id="toc-dépendance" class="nav-link" data-scroll-target="#dépendance"><span class="header-section-number">1.1</span> Dépendance</a></li>
+  <li><a href="#association" id="toc-association" class="nav-link" data-scroll-target="#association"><span class="header-section-number">1.2</span> Association</a></li>
+  <li><a href="#agrégation" id="toc-agrégation" class="nav-link" data-scroll-target="#agrégation"><span class="header-section-number">1.3</span> Agrégation</a></li>
+  <li><a href="#composition" id="toc-composition" class="nav-link" data-scroll-target="#composition"><span class="header-section-number">1.4</span> Composition</a></li>
+  <li><a href="#généralisation" id="toc-généralisation" class="nav-link" data-scroll-target="#généralisation"><span class="header-section-number">1.5</span> Généralisation</a></li>
   </ul></li>
-  <li><a href="#template-doc" id="toc-template-doc" class="nav-link" data-scroll-target="#template-doc"><span class="header-section-number">5</span> Template doc</a></li>
-  <li><a href="#template-pytest" id="toc-template-pytest" class="nav-link" data-scroll-target="#template-pytest"><span class="header-section-number">6</span> Template pytest</a></li>
   </ul>
 </nav>
 </nav>
@@ -215,12 +182,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">POO, documentation et tests - TP3</h1>
+<h1 class="title">POO, documentation et tests - TD1</h1>
 </div>
 
 <div>
   <div class="description">
-    Structures hétérogènes de données et tests
+    Héritages, relations, UML, modélisation
   </div>
 </div>
 
@@ -243,198 +210,164 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="créer-larborscence" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="créer-larborscence"><span class="header-section-number">1</span> Créer l’arborscence</h2>
-<pre><code>└── P
-    └── Cours1A
-        └── IPOO
-            ├── TP1
-            │   ├── Exercice_1
-            │   │   └── ex.py
-            │   ├── Exercice_2
-            │   │   └── ex.py
-            │   ├── ...
-            │   └── Exercice_7
-            │       └── ex.py
-            ├── TP2
-            │   ├── Exercice_1
-            │   │   └── ex.py
-            │   ├── Exercice_2
-            │   ├── ...</code></pre>
-<p>Pour prendre la bonne habitude de bien ranger vos fichiers, vous allez créer l’arborscence ci-dessus. Vous pouvez créer chaque dossier et fichier à la main, ou utiliser les commandes ci-dessous (<em>mkdir : make directory</em>):</p>
-<ul class="task-list">
-<li><label><input type="checkbox">Ouvrez <code>Git Bash</code></label>
+<section id="uml" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="uml"><span class="header-section-number">1</span> UML</h2>
+<section id="dépendance" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="dépendance"><span class="header-section-number">1.1</span> Dépendance</h3>
 <ul>
-<li>Sur le bureau &gt; clic droit &gt; <strong>Git Bash here</strong></li>
-</ul></li>
-<li><label><input type="checkbox">Collez la commande suivante</label>
-<ul>
-<li><code>mkdir -p /p/Cours1A/IPOO/TP3/Exercice_{1..4}/</code></li>
-<li>dans Git Bash : clic droit &gt; Paste ou MAJ + INSER</li>
-</ul></li>
-<li><label><input type="checkbox">Fermez <em>Git Bash</em></label></li>
+<li>Lorsqu’un changement dans une classe implique la modiﬁcation du comportement d’une autre classe</li>
+<li>Dans l’exemple, l’<em>état</em> de la fenêtre va dépendre de l’attribut <em>outils</em> de la personne</li>
 </ul>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">classDiagram
+    direction LR
+    class Personne {
+        - nom: string
+        - age: int
+    }
+
+    class Fenetre {
+        + etat: string
+        + opération(p : Personne)
+    }
+
+    Personne ..&gt; Fenetre
+</pre>
 </div>
-<div class="callout-title-container flex-fill">
-Utilisez le lecteur <strong>P:</strong>
+<p></p></figure><p></p>
 </div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Il est important de stocker vos fichiers dans votre lecteur <code>P:</code> et pas sur votre bureau ou votre disque <em>C:</em> car vos fichiers risqueraient de disparaitre !</p>
 </div>
 </div>
 </section>
-<section id="moodle" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="moodle"><span class="header-section-number">2</span> Moodle</h2>
-<ul class="task-list">
-<li><label><input type="checkbox">Aller sur la page du <a href="https://foad-moodle.ensai.fr/pluginfile.php/27913/mod_resource/content/3/TP3%20-%20Sujet.pdf" class="external" target="_blank">TP3</a></label></li>
-<li><label><input type="checkbox">Ouvrez le sujet et enregistrez le dans <code>/p/Cours1A/IPOO/TP3</code></label></li>
+<section id="association" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="association"><span class="header-section-number">1.2</span> Association</h3>
+<ul>
+<li>relation structurelle entre deux classes</li>
+<li>il est possible de naviguer d’un objet d’une classe, à un ou plusieurs objets de l’autre classe</li>
 </ul>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">classDiagram
+    direction LR
+    class Entreprise {
+        - nom: string
+        - adresse: string
+    }
+    
+    class Personne {
+        - nom: string
+        - age: int
+    }
+    
+    Entreprise "*" -- "*" Personne : emploie
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
 </section>
-<section id="visual-studio-code" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="visual-studio-code"><span class="header-section-number">3</span> Visual Studio Code</h2>
-<ul class="task-list">
-<li><label><input type="checkbox">Ouvrez Visual Studio Code</label>
-<ul class="task-list">
-<li><label><input type="checkbox">File &gt; Open Folder</label></li>
-<li><label><input type="checkbox">Cliquez <u>une seule fois</u> sur <strong>Exercice_1</strong></label></li>
-<li><label><input type="checkbox">Cliquez sur <code>Sélectionner un dossier</code></label>
+<section id="agrégation" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="agrégation"><span class="header-section-number">1.3</span> Agrégation</h3>
 <ul>
-<li>dans votre <em>Explorer</em> à gauche apparait l’arborescence des dossiers et fichiers de <strong>Exercice_1</strong></li>
-</ul></li>
-</ul></li>
-</ul>
-</section>
-<section id="exercices" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="exercices"><span class="header-section-number">4</span> Exercices</h2>
-<section id="exercice-1" class="level3" data-number="4.1">
-<h3 data-number="4.1" class="anchored" data-anchor-id="exercice-1"><span class="header-section-number">4.1</span> Exercice 1</h3>
+<li>lorsqu’un élément est constitué d’un autre</li>
+<li>Supprimer l’agrégat (vélo) ne supprime pas le composant (roue)
 <ul>
-<li>pour lancer les tests (en collant dans un terminal)
-<ul>
-<li><code>python -m pytest --doctest-modules</code></li>
-</ul></li>
-<li><span class="emoji" data-emoji="warning">⚠️</span> dans une liste python, le premier élément est à l’index 0
-<ul>
-<li>le dernier élément est à l’index <code>len(liste) - 1</code></li>
+<li>ici on peut imaginer retirer la roue d’un vélo pour la mettre sur un autre vélo</li>
 </ul></li>
 </ul>
-<section id="parcourir-des-listes" class="level4">
-<h4 class="anchored" data-anchor-id="parcourir-des-listes">Parcourir des listes</h4>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>liste <span class="op">=</span> [<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>, <span class="st">"d"</span>, <span class="st">"e"</span>]</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Par index</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(liste)):</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"index : </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">, valeur : </span><span class="sc">{</span>liste[i]<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Par valeurs</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> v <span class="kw">in</span> liste:</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(v)</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Combiner index et valeurs</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, v <span class="kw">in</span> <span class="bu">enumerate</span>(liste):</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"index : </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">, valeur : </span><span class="sc">{</span>v<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">classDiagram
+    direction LR
+    class Velo {
+        - couleur: string
+    }
+    
+    class Roue {
+        - taille: int
+    }
+    
+    Velo "1" o-- "2" Roue : posséde
+</pre>
 </div>
-<div class="callout-title-container flex-fill">
-Aide
+<p></p></figure><p></p>
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
+</div>
+</section>
+<section id="composition" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="composition"><span class="header-section-number">1.4</span> Composition</h3>
 <ul>
-<li>pour écrire les tests, voir TP2 &gt; ex2</li>
-<li>importer un module <span class="emoji" data-emoji="arrow_right">➡️</span> CM voir diapo 14</li>
-<li>commencer à l’index 3 : <code>liste[3:]</code></li>
+<li>le composant est détruit lorsque l’agrégat est détruit</li>
 </ul>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">classDiagram
+    direction LR
+    class Entreprise {
+        - nom: string
+        - adresse: string
+    }
+    
+    class Departement {
+        - nom: string
+    }
+    
+    Entreprise "1" *-- "*" Departement : a
+</pre>
+</div>
+<p></p></figure><p></p>
 </div>
 </div>
 </div>
 </section>
-</section>
-<section id="exercice-2" class="level3" data-number="4.2">
-<h3 data-number="4.2" class="anchored" data-anchor-id="exercice-2"><span class="header-section-number">4.2</span> Exercice 2</h3>
-<ul class="task-list">
-<li><label><input type="checkbox">VSCode &gt; File &gt; Open Folder</label></li>
-<li><label><input type="checkbox">Cliquez <u>une seule fois</u> sur <strong>Exercice_2</strong></label></li>
-<li><label><input type="checkbox">Cliquez sur <code>Sélectionner un dossier</code></label></li>
+<section id="généralisation" class="level3" data-number="1.5">
+<h3 data-number="1.5" class="anchored" data-anchor-id="généralisation"><span class="header-section-number">1.5</span> Généralisation</h3>
+<ul>
+<li>Héritage</li>
 </ul>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">classDiagram
+    direction TB
+    class Animal{
+        + age: int
+        + gender: String
+        + isMammal() : bool
+        + mate()
+    }
+    class Duck{
+        + beakColor: String
+        + swim()
+        + quack()
+    }
+    Animal &lt;|-- Duck
+</pre>
 </div>
-<div class="callout-title-container flex-fill">
-Note
+<p></p></figure><p></p>
 </div>
 </div>
-<div class="callout-body-container callout-body">
-<p>La fonction <em>map(fonction, liste)</em> permet d’appliquer une fonction à une liste (mais vous n’avez pas le droit de l’utiliser)</p>
 </div>
-</div>
-</section>
-</section>
-<section id="template-doc" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="template-doc"><span class="header-section-number">5</span> Template doc</h2>
-<p>Voici un modèle que vous pouvez utiliser pour documenter vos fonctions</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> ma_fonction(param1, param2):</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""description_courte</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">    description_longue</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">    Parameters</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">    ----------</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">    param1 : type (str, int, float, list...)</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co">        description_param1</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co">    param2 : type</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co">        description_param2</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co">    -------</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co">    type_retour</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co">        description_retour</span></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="co">    Examples</span></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="co">    --------</span></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="co">    &gt;&gt;&gt; 1+1</span></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="co">    2</span></span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="co">    &gt;&gt;&gt; print("abc")</span></span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="co">    abc</span></span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="co">    &gt;&gt;&gt; ma_fonction(xxx, yyy)</span></span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="co">    valeur_esperee</span></span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">None</span></span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">'__main__'</span>:</span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> ma_fonction(p1, p2)</span>
-<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="template-pytest" class="level2" data-number="6">
-<h2 data-number="6" class="anchored" data-anchor-id="template-pytest"><span class="header-section-number">6</span> Template pytest</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pytest</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mon_fichier <span class="im">import</span> ma_fonction</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="at">@pytest.mark.parametrize</span>(</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'param1, param2, resultat_attendu'</span>,</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    [</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>        (<span class="dv">1</span>,       <span class="dv">1</span>,                <span class="dv">2</span>),</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>        (<span class="dv">1</span>,       <span class="dv">2</span>,                <span class="dv">3</span>),</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>        (<span class="dv">2</span>,       <span class="dv">2</span>,                <span class="dv">4</span>)</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    ]</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_ma_fonction(param1, param2, resultat_attendu):</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> ma_fonction(param1, param2) <span class="op">==</span> resultat_attendu</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
